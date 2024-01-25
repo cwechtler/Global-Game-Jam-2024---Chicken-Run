@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 	public GameObject playerGO { get; private set; }
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
+	public int Score { get; set; } = 0;
 	public int EggsHatched { get; set; } = 0;
 	public int EggsBroken { get; set; } = 0;
 	public int ChicksCaught { get; set; } = 0;

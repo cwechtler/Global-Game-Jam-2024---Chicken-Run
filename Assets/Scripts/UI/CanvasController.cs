@@ -13,6 +13,7 @@ public class CanvasController : MonoBehaviour
 	[Space]
 	[SerializeField] private Slider playerHealthBar;
 
+	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI EggsHatchedText;
 	[SerializeField] private TextMeshProUGUI EggsBrokenText;
 	[SerializeField] private TextMeshProUGUI ChicksCaughtText;
@@ -40,6 +41,7 @@ public class CanvasController : MonoBehaviour
 
 	private void Update()
 	{
+		ScoreText.text = GameController.instance.Score.ToString();
 		EggsHatchedText.text = GameController.instance.EggsHatched.ToString();
 		EggsBrokenText.text = GameController.instance.EggsBroken.ToString();
 		ChicksCaughtText.text = GameController.instance.ChicksCaught.ToString();

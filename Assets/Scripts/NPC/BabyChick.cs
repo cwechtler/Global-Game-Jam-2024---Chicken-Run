@@ -12,7 +12,6 @@ public class BabyChick : MonoBehaviour
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
-
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -40,36 +39,6 @@ public class BabyChick : MonoBehaviour
 		}
 	}
 
-	//public void reduceHealth(float damage)
-	//{
-	//	health -= damage;
-	//	if (health <= 0 && !isDead)
-	//	{
-	//		isDead = true;
-	//		Destroy(gameObject);
-	//		SoundManager.instance.EnemyDeathSound(deathClip);
-	//		GameController.instance.EnemiesKilled++;
-	//		GameController.instance.AddEnemyType(skillElementTypeToDestroy);
-	//	}
-	//}
-
-	//private void DamagePlayer()
-	//{
-	//	damageTimer = 1;
-	//	player.GetComponent<PlayerController>().ReduceHealth(damage);
-	//}
-
-	//private void OnCollisionStay2D(Collision2D collision)
-	//{
-	//	if (collision.gameObject.CompareTag("Player"))
-	//	{
-	//		if (damageTimer <= 0)
-	//		{
-	//			DamagePlayer();
-	//		}
-	//	}
-	//}
-
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Enemy"))
@@ -81,15 +50,6 @@ public class BabyChick : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
-	//private void OnParticleCollision(GameObject particle)
-	//{
-	//	SkillConfig particleParent = particle.GetComponentInParent<SkillConfig>();
-	//	if (particleParent.SkillElementType == skillElementTypeToDestroy)
-	//	{
-	//		reduceHealth(particleParent.GetDamage());
-	//	}
-	//}
 
 	private void FlipDirection()
 	{

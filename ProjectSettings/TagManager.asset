@@ -12,6 +12,7 @@ TagManager:
   - Destructible
   - Chick Container
   - Egg Container
+  - Baby Chick
   layers:
   - Default
   - TransparentFX

@@ -1,40 +1,50 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Egg : MonoBehaviour
 {
     [SerializeField] private GameObject prefabToSpawn;
+	[SerializeField] private AudioClip hatchClip;
+	[SerializeField] private AudioClip breakClip;
     
 	private GameObject parent;
+	private AudioSource audioSource;
+	private bool canHatch;
 
-	// Start is called before the first frame update
 	void Start()
     {
 		parent = GameObject.FindGameObjectWithTag("Chick Container");
+		audioSource = gameObject.GetComponent<AudioSource>();
+		canHatch = true;
 	}
-
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Player")) {
-			GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
-			enemy.transform.SetParent(parent.transform);
-			//SoundManager.instance.EnemyDeathSound(hatchClip);
-			GameController.instance.EggsHatched++;
-			GameController.instance.ChicksFollowing++;
-			Destroy(this.gameObject);
+		if (collision.CompareTag("Player") && canHatch) {
+			canHatch = false;
+			StartCoroutine(hatch());
+			//GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
+			//enemy.transform.SetParent(parent.transform);
+			//audioSource.PlayOneShot(hatchClip);
+			//GameController.instance.EggsHatched++;
+			//GameController.instance.ChicksFollowing++;
+			//Destroy(this.gameObject);
 		}
 		if (collision.CompareTag("Enemy"))
 		{
-			//SoundManager.instance.EnemyDeathSound(breakClip);
+			audioSource.PlayOneShot(breakClip);
 			GameController.instance.EggsBroken++;
 			Destroy(this.gameObject);
 		}
+	}
+
+	IEnumerator hatch() {
+		audioSource.PlayOneShot(hatchClip);
+		yield return new WaitForSeconds(hatchClip.length);
+		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
+		enemy.transform.SetParent(parent.transform);
+		GameController.instance.EggsHatched++;
+		GameController.instance.ChicksFollowing++;
+		Destroy(this.gameObject);
 	}
 }
