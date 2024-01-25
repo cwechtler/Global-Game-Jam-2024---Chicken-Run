@@ -158,10 +158,11 @@ public class SoundManager : MonoBehaviour {
 		SFXAudioSource.PlayOneShot(clip);
 	}
 
-	public void EnemyDeathSound(AudioClip clip)
+	public void BabyChickCaughtSound(AudioClip clip, Vector3 point)
 	{
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(clip);
+		AudioSource.PlayClipAtPoint(clip, point);
 	}
 
 	public void ChangeMasterVolume(float volume) {

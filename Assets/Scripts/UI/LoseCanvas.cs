@@ -17,16 +17,16 @@ public class LoseCanvas : MonoBehaviour
 	void Start()
 	{
 		animator = gameObject.GetComponent<Animator>();
-		PlayerName.text = GameController.instance.PlayerName;
-		shadowText.text = GameController.instance.Shadow.ToString();
-		airText.text = GameController.instance.Air.ToString();
-		fireText.text = GameController.instance.Fire.ToString();
-		waterText.text = GameController.instance.Water.ToString();
-		total.text = GameController.instance.EnemiesKilled.ToString();
+		//PlayerName.text = GameController.instance.PlayerName;
+		//shadowText.text = GameController.instance.Shadow.ToString();
+		//airText.text = GameController.instance.Air.ToString();
+		//fireText.text = GameController.instance.Fire.ToString();
+		//waterText.text = GameController.instance.Water.ToString();
+		total.text = GameController.instance.EggsBroken.ToString();
 
-		if(GameController.instance.PlayerName == System.Environment.MachineName) {
-			EventSystem.current.SetSelectedGameObject(PlayerName.gameObject);
-		}
+		//if(GameController.instance.PlayerName == System.Environment.MachineName) {
+		//	EventSystem.current.SetSelectedGameObject(PlayerName.gameObject);
+		//}
 	}
 
 	private void Update()
@@ -52,33 +52,33 @@ public class LoseCanvas : MonoBehaviour
 		LevelManager.instance.LoadLevel(LevelManager.Level1String, true);
 	}
 
-	public void SaveScore() {
-		bool saved = false;
-		if (PlayerName.text == "") {
-			animator.SetBool("Flash", true);
-		}
-		else {
-			saved = GameController.instance.SaveHighScore(PlayerName.text);
-			if (saved) {
-				saveScore.GetComponentInChildren<TextMeshProUGUI>().text = "Score Saved";
-				saveScore.GetComponent<Button>().interactable = false;
-				Image image = saveScore.GetComponentInChildren<Image>();
-				image.color = new Color(image.color.r, image.color.g, image.color.b, .37f);
-				PlayerName.interactable = false;
-				Image nameImage = PlayerName.gameObject.GetComponent<Image>();
-				nameImage.color = new Color(image.color.r, image.color.g, image.color.b, 0f);
-				EventSystem.current.SetSelectedGameObject(PlayerName.gameObject);
-			}
-		}
-	}
+	//public void SaveScore() {
+	//	bool saved = false;
+	//	if (PlayerName.text == "") {
+	//		animator.SetBool("Flash", true);
+	//	}
+	//	else {
+	//		saved = GameController.instance.SaveHighScore(PlayerName.text);
+	//		if (saved) {
+	//			saveScore.GetComponentInChildren<TextMeshProUGUI>().text = "Score Saved";
+	//			saveScore.GetComponent<Button>().interactable = false;
+	//			Image image = saveScore.GetComponentInChildren<Image>();
+	//			image.color = new Color(image.color.r, image.color.g, image.color.b, .37f);
+	//			PlayerName.interactable = false;
+	//			Image nameImage = PlayerName.gameObject.GetComponent<Image>();
+	//			nameImage.color = new Color(image.color.r, image.color.g, image.color.b, 0f);
+	//			EventSystem.current.SetSelectedGameObject(PlayerName.gameObject);
+	//		}
+	//	}
+	//}
 
 	public void StopAnim() {
 		animator.SetBool("Flash", false);
 	}
 
-	public void InputName()
-	{
-		GameController.instance.PlayerName = PlayerName.text;
-		PlayerPrefsManager.SetPlayerName(PlayerName.text);
-	}
+	//public void InputName()
+	//{
+	//	GameController.instance.PlayerName = PlayerName.text;
+	//	PlayerPrefsManager.SetPlayerName(PlayerName.text);
+	//}
 }

@@ -7,10 +7,10 @@ TagManager:
   - Enemy
   - Fade Panel
   - Obsticle
-  - DropContainer
   - Skill
   - Collectable
   - Destructible
+  - Chick Container
   layers:
   - Default
   - TransparentFX
@@ -26,8 +26,8 @@ TagManager:
   - Suction
   - FireBall
   - Destructible
-  - 
-  - 
+  - Chicken
+  - Egg
   - 
   - 
   - 
