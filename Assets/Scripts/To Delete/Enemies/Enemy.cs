@@ -55,9 +55,9 @@ public class Enemy : MonoBehaviour
 		if (health <= 0 && !isDead) {
 			isDead = true;
 			Destroy(gameObject);
-			SoundManager.instance.EnemyDeathSound(deathClip);
-			GameController.instance.EnemiesKilled++;
-			GameController.instance.AddEnemyType(skillElementTypeToDestroy);
+			//SoundManager.instance.EnemyDeathSound(deathClip);
+			GameController.instance.EggsBroken++;
+			//GameController.instance.AddEnemyType(skillElementTypeToDestroy);
 
 			//Drop Experience - MT
 			GameObject drop = Instantiate(expDrop, transform.position, transform.rotation) as GameObject;
@@ -94,7 +94,8 @@ public class Enemy : MonoBehaviour
 	private void OnParticleCollision(GameObject particle)
 	{
 		SkillConfig particleParent = particle.GetComponentInParent<SkillConfig>();
-		if (particleParent.SkillElementType == skillElementTypeToDestroy) {
+		if (particleParent.SkillElementType == skillElementTypeToDestroy)
+		{
 			reduceHealth(particleParent.GetDamage());
 		}
 	}

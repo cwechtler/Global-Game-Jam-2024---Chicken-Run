@@ -47,18 +47,18 @@ public class PlayerController : MonoBehaviour
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		animators = GetComponentsInChildren<Animator>(true);
 
-		SetActiveSkill(0);
+		//SetActiveSkill(0);
 
 		coolDownTimes = new float[skills.Length];
 		timerTimes = new float[skills.Length];
 		skillWasCast = new bool[skills.Length];
 
-		for (int i = 0; i < skills.Length; i++) {
-			SkillConfig skill = skills[i].GetComponent<SkillConfig>();
-			coolDownTimes[i] = skill.CoolDownTime;
-			canvasController.SetCoolDownTime(i, coolDownTimes[i]);
-			canvasController.SetSkillImages(i, skill.SkillImage);
-		}
+		//for (int i = 0; i < skills.Length; i++) {
+		//	SkillConfig skill = skills[i].GetComponent<SkillConfig>();
+		//	coolDownTimes[i] = skill.CoolDownTime;
+		//	canvasController.SetCoolDownTime(i, coolDownTimes[i]);
+		//	canvasController.SetSkillImages(i, skill.SkillImage);
+		//}
 	}
 
 	void Update()
@@ -66,15 +66,15 @@ public class PlayerController : MonoBehaviour
 		if (!isDead) {
 			Move();
 
-			SelectSkill();
+			//SelectSkill();
 			Fire();
 		}
 	}
 
-	public void AddToInventory(GameObject inventoryPrefab) {
-		inventoryItems.Add(inventoryPrefab);
-		canvasController.AddInventoryItem(inventoryPrefab);
-	}
+	//public void AddToInventory(GameObject inventoryPrefab) {
+	//	inventoryItems.Add(inventoryPrefab);
+	//	canvasController.AddInventoryItem(inventoryPrefab);
+	//}
 
 	public void ReduceHealth(int damage)
 	{
@@ -123,41 +123,41 @@ public class PlayerController : MonoBehaviour
 		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
 	}
 
-	private void SetActiveSkill(int index) {
-		GameController.instance.ActiveSkillIndex = index;
-		activeSkillIndex = index;
-		activeSkill = skills[index];
-		SkillConfig activeSkillSkillConfig = activeSkill.GetComponent<SkillConfig>();
-		firingRate = activeSkillSkillConfig.FireRate;
-		canvasController.UpdateTextColor();
-	}
+	//private void SetActiveSkill(int index) {
+	//	GameController.instance.ActiveSkillIndex = index;
+	//	activeSkillIndex = index;
+	//	activeSkill = skills[index];
+	//	SkillConfig activeSkillSkillConfig = activeSkill.GetComponent<SkillConfig>();
+	//	firingRate = activeSkillSkillConfig.FireRate;
+	//	canvasController.UpdateTextColor();
+	//}
 
-	private void SelectSkill()
-	{
-		if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetButtonDown("Space")) {
-			if (activeSkillIndex == skills.Length - 1) activeSkillIndex = 0;
-			else activeSkillIndex++;
-			SetActiveSkill(activeSkillIndex);
-		}
-		if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
-			if (activeSkillIndex == 0) activeSkillIndex = skills.Length - 1;
-			else activeSkillIndex--;
-			SetActiveSkill(activeSkillIndex);
-		}
+	//private void SelectSkill()
+	//{
+	//	if (Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetButtonDown("Space")) {
+	//		if (activeSkillIndex == skills.Length - 1) activeSkillIndex = 0;
+	//		else activeSkillIndex++;
+	//		SetActiveSkill(activeSkillIndex);
+	//	}
+	//	if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
+	//		if (activeSkillIndex == 0) activeSkillIndex = skills.Length - 1;
+	//		else activeSkillIndex--;
+	//		SetActiveSkill(activeSkillIndex);
+	//	}
 
-		if (Input.GetButtonDown("Fire1")) {
-			SetActiveSkill(0);
-		}
-		else if (Input.GetButtonDown("Fire2")) {
-			SetActiveSkill(1);
-		}
-		else if (Input.GetButtonDown("Fire3")) {
-			SetActiveSkill(2);
-		}
-		else if (Input.GetButtonDown("Jump")) {
-			SetActiveSkill(3);
-		}
-	}
+	//	if (Input.GetButtonDown("Fire1")) {
+	//		SetActiveSkill(0);
+	//	}
+	//	else if (Input.GetButtonDown("Fire2")) {
+	//		SetActiveSkill(1);
+	//	}
+	//	else if (Input.GetButtonDown("Fire3")) {
+	//		SetActiveSkill(2);
+	//	}
+	//	else if (Input.GetButtonDown("Jump")) {
+	//		SetActiveSkill(3);
+	//	}
+	//}
 
 	private void Fire() {
 		fireY = Input.GetAxis("SpellVertical");
@@ -170,41 +170,41 @@ public class PlayerController : MonoBehaviour
 			fireY = Mathf.Clamp(direction.y, -1, 1);
 		}
 
-		if ((fireX != 0 || fireY != 0)) {
-			skillSpawner.eulerAngles = new Vector3(0, 0, Mathf.Atan2(-fireY, -fireX) * 180 / Mathf.PI);
-			if (skillWasCast[activeSkillIndex] == false) {
-				skillWasCast[activeSkillIndex] = true;
-				string skillType = activeSkill.GetComponent<SkillConfig>().SkillElementType.ToString();
-				foreach (var animator in animators) {
-					animator.SetTrigger("Attack");
-				}
-				switch (skillType) {
-					case "Water":
-					case "Lightning":
-						CastSkill();
-						break;
-					case "Suction":
-						PlaceSkill();
-						break;
-					default:
-						StartCoroutine(ThrowSkill(fireX, fireY));
-						break;
-				}
-			}
-		}
+		//if ((fireX != 0 || fireY != 0)) {
+		//	skillSpawner.eulerAngles = new Vector3(0, 0, Mathf.Atan2(-fireY, -fireX) * 180 / Mathf.PI);
+		//	if (skillWasCast[activeSkillIndex] == false) {
+		//		skillWasCast[activeSkillIndex] = true;
+		//		string skillType = activeSkill.GetComponent<SkillConfig>().SkillElementType.ToString();
+		//		foreach (var animator in animators) {
+		//			animator.SetTrigger("Attack");
+		//		}
+		//		switch (skillType) {
+		//			case "Water":
+		//			case "Lightning":
+		//				CastSkill();
+		//				break;
+		//			case "Suction":
+		//				PlaceSkill();
+		//				break;
+		//			default:
+		//				StartCoroutine(ThrowSkill(fireX, fireY));
+		//				break;
+		//		}
+		//	}
+		//}
 
-		for (int i = 0; i < skills.Length; i++) {
-			if (skillWasCast[i]) {
-				if (timerTimes[i] < coolDownTimes[i]) {
-					timerTimes[i] += Time.deltaTime;
-					canvasController.CoolDownTimer(timerTimes[i], coolDownTimes[i], i);
-				}
-				else if (timerTimes[i] >= coolDownTimes[i]) {
-					timerTimes[i] = 0;
-					skillWasCast[i] = false;
-				}
-			}
-		}
+		//for (int i = 0; i < skills.Length; i++) {
+		//	if (skillWasCast[i]) {
+		//		if (timerTimes[i] < coolDownTimes[i]) {
+		//			timerTimes[i] += Time.deltaTime;
+		//			canvasController.CoolDownTimer(timerTimes[i], coolDownTimes[i], i);
+		//		}
+		//		else if (timerTimes[i] >= coolDownTimes[i]) {
+		//			timerTimes[i] = 0;
+		//			skillWasCast[i] = false;
+		//		}
+		//	}
+		//}
 	}
 
 	private void CastSkill() {

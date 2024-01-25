@@ -11,19 +11,23 @@ public class GameController : MonoBehaviour
 	public GameObject playerGO { get; private set; }
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
-	public int EnemiesKilled { get; set; }
-	public int ActiveSkillIndex { get; set; }
-	public int Shadow { get => shadow; }
-	public int Air { get => air; }
-	public int Fire { get => fire; }
-	public int Water { get => water; }
-	public string PlayerName { get; set; }
-	public List<Tuple<string, int>> HighScores { get => highScores; set => highScores = value; }
+	public int EggsHatched { get; set; } = 0;
+	public int EggsBroken { get; set; } = 0;
+	public int ChicksCaught { get; set; } = 0;
+	public int ChicksFollowing { get; set; } = 0;
 
-	private List<Tuple<string, int>> highScores = new List<Tuple<string, int>>();
+	//public int ActiveSkillIndex { get; set; }
+	//public int Shadow { get => shadow; }
+	//public int Air { get => air; }
+	//public int Fire { get => fire; }
+	//public int Water { get => water; }
+	//public string PlayerName { get; set; }
+	//public List<Tuple<string, int>> HighScores { get => highScores; set => highScores = value; }
+
+	//private List<Tuple<string, int>> highScores = new List<Tuple<string, int>>();
 	private GameObject fadePanel;
-	private Animator animator;
-	private int shadow, air, fire, water;
+	//private Animator animator;
+	//private int shadow, air, fire, water;
 
 	private void Awake()
 	{
@@ -36,19 +40,19 @@ public class GameController : MonoBehaviour
 		}
 		//PlayerPrefsManager.DeleteAllPlayerPrefs();
 
-		if (PlayerPrefsManager.DoesKeyExist(PlayerPrefsManager.HighScoresKey)) {
-			string highScoresString = PlayerPrefsManager.GetHighScores();
-			//highScores = JsonConvert.DeserializeObject<List<Tuple<string, int>>>(highScoresString);
+		//if (PlayerPrefsManager.DoesKeyExist(PlayerPrefsManager.HighScoresKey)) {
+		//	string highScoresString = PlayerPrefsManager.GetHighScores();
+		//	//highScores = JsonConvert.DeserializeObject<List<Tuple<string, int>>>(highScoresString);
 
-			highScores.Sort((x, y) => y.Item2.CompareTo(x.Item2));
-		}
+		//	highScores.Sort((x, y) => y.Item2.CompareTo(x.Item2));
+		//}
 
-		if (PlayerPrefsManager.DoesKeyExist(PlayerPrefsManager.PlayerNameKey)) {
-			PlayerName = PlayerPrefsManager.GetPlayerName();
-		}
-		else {
-			PlayerName = System.Environment.MachineName;
-		}
+		//if (PlayerPrefsManager.DoesKeyExist(PlayerPrefsManager.PlayerNameKey)) {
+		//	PlayerName = PlayerPrefsManager.GetPlayerName();
+		//}
+		//else {
+		//	PlayerName = System.Environment.MachineName;
+		//}
 	}
 
 	private void Update()
@@ -63,41 +67,38 @@ public class GameController : MonoBehaviour
 		}
 	}
 
-	public bool SaveHighScore(string name)
-	{
-		highScores.Add(Tuple.Create(name, EnemiesKilled));
-		highScores.Sort((x, y) => y.Item2.CompareTo(x.Item2));
+	//public bool SaveHighScore(string name)
+	//{
+	//	highScores.Add(Tuple.Create(name, EggsBroken));
+	//	highScores.Sort((x, y) => y.Item2.CompareTo(x.Item2));
 
-		//string json = JsonConvert.SerializeObject(highScores, Formatting.Indented);
-		//PlayerPrefsManager.SetHighScores(json);
+	//	//string json = JsonConvert.SerializeObject(highScores, Formatting.Indented);
+	//	//PlayerPrefsManager.SetHighScores(json);
 
-		return true;
-	}
+	//	return true;
+	//}
 
-	public void AddEnemyType(skillElementType skillElementType) {
-		switch (skillElementType) {
-			case skillElementType.Fire:
-				water++;
-				break;
-			case skillElementType.Water:
-				fire++;
-				break;
-			case skillElementType.Lightning:
-				shadow++;
-				break;
-			case skillElementType.Suction:
-				air++;
-				break;
-			default:
-				break;
-		}
-	}
+	//public void AddEnemyType(skillElementType skillElementType) {
+	//	switch (skillElementType) {
+	//		case skillElementType.Fire:
+	//			water++;
+	//			break;
+	//		case skillElementType.Water:
+	//			fire++;
+	//			break;
+	//		case skillElementType.Lightning:
+	//			shadow++;
+	//			break;
+	//		case skillElementType.Suction:
+	//			air++;
+	//			break;
+	//		default:
+	//			break;
+	//	}
+	//}
 	public void resetGame() {
-		EnemiesKilled = 0;
-		shadow = 0;
-		air = 0;
-		fire = 0;
-		water = 0;
+		EggsBroken = 0;
+		ChicksCaught = 0;
 	}
 
 	public void FadePanel()

@@ -12,10 +12,15 @@ public class CanvasController : MonoBehaviour
 	[SerializeField] private Color32 activeTextColor = new Color32(255, 0, 0, 255);
 	[Space]
 	[SerializeField] private Slider playerHealthBar;
-	[SerializeField] private TextMeshProUGUI ScoreText;
-	[SerializeField] private TextMeshProUGUI[] skillTexts;
-	[SerializeField] private Slider[] skillCoolDowns;
-	[SerializeField] private Image[] skillCooldownFill;
+
+	[SerializeField] private TextMeshProUGUI EggsHatchedText;
+	[SerializeField] private TextMeshProUGUI EggsBrokenText;
+	[SerializeField] private TextMeshProUGUI ChicksCaughtText;
+	[SerializeField] private TextMeshProUGUI ChicksFollowingText;
+
+	//[SerializeField] private TextMeshProUGUI[] skillTexts;
+	//[SerializeField] private Slider[] skillCoolDowns;
+	//[SerializeField] private Image[] skillCooldownFill;
 
 	private Button button;
 	private TextMeshProUGUI buttonText;
@@ -24,7 +29,7 @@ public class CanvasController : MonoBehaviour
 	private void Start()
 	{
 		playerHealthBar.value = 100;
-		UpdateTextColor();
+		//UpdateTextColor();
 		foreach (Transform child in inventory.transform) {
 			if (child.name == "Key") {
 				print("Has Key");
@@ -35,7 +40,11 @@ public class CanvasController : MonoBehaviour
 
 	private void Update()
 	{
-		ScoreText.text = GameController.instance.EnemiesKilled.ToString();
+		EggsHatchedText.text = GameController.instance.EggsHatched.ToString();
+		EggsBrokenText.text = GameController.instance.EggsBroken.ToString();
+		ChicksCaughtText.text = GameController.instance.ChicksCaught.ToString();
+		ChicksFollowingText.text = GameController.instance.ChicksFollowing.ToString();
+
 		if (GameController.instance.isPaused) {
 			pausePanel.SetActive(true);
 		}
@@ -44,47 +53,47 @@ public class CanvasController : MonoBehaviour
 		}
 	}
 
-	public void AddInventoryItem(GameObject inventoryPrefab) {
-		Instantiate(inventoryPrefab, inventory.transform);
-	}
+	//public void AddInventoryItem(GameObject inventoryPrefab) {
+	//	Instantiate(inventoryPrefab, inventory.transform);
+	//}
 
-	public void RemoveInventoryItem(string itemKey)
-	{
-		foreach (Transform child in inventory.transform) {
-			if (child.name == itemKey) {
-				GameObject.Destroy(child.gameObject);
-			}
-		}
-	}
+	//public void RemoveInventoryItem(string itemKey)
+	//{
+	//	foreach (Transform child in inventory.transform) {
+	//		if (child.name == itemKey) {
+	//			GameObject.Destroy(child.gameObject);
+	//		}
+	//	}
+	//}
 
-	public void UpdateTextColor()
-	{		
-		for (int i = 0; i < skillTexts.Length; i++) {
-			if (i == GameController.instance.ActiveSkillIndex) {
-				skillTexts[i].color = activeTextColor;
-				skillCooldownFill[i].color = activeTextColor;
-			}
-			else {
-				skillTexts[i].color = defaultTextColor;
-				skillCooldownFill[i].color = Color.white;
-			}
-		}
-	}
+	//public void UpdateTextColor()
+	//{		
+	//	for (int i = 0; i < skillTexts.Length; i++) {
+	//		if (i == GameController.instance.ActiveSkillIndex) {
+	//			skillTexts[i].color = activeTextColor;
+	//			skillCooldownFill[i].color = activeTextColor;
+	//		}
+	//		else {
+	//			skillTexts[i].color = defaultTextColor;
+	//			skillCooldownFill[i].color = Color.white;
+	//		}
+	//	}
+	//}
 
-	public void SetSkillImages(int index, Sprite sprite) {
-		skillTexts[index].GetComponentInParent<Image>().sprite = sprite;
-	}
+	//public void SetSkillImages(int index, Sprite sprite) {
+	//	skillTexts[index].GetComponentInParent<Image>().sprite = sprite;
+	//}
 
-	public void SetCoolDownTime(int index, float coolDownTime) {
-		skillCoolDowns[index].maxValue = coolDownTime;
-		skillCoolDowns[index].value = coolDownTime;
-	}
+	//public void SetCoolDownTime(int index, float coolDownTime) {
+	//	skillCoolDowns[index].maxValue = coolDownTime;
+	//	skillCoolDowns[index].value = coolDownTime;
+	//}
 
-	public void CoolDownTimer(float timeRemaining, float skillCoolDown, int index) {
-		if (timeRemaining < skillCoolDown) {
-			skillCoolDowns[index].value = timeRemaining;
-		}
-	}
+	//public void CoolDownTimer(float timeRemaining, float skillCoolDown, int index) {
+	//	if (timeRemaining < skillCoolDown) {
+	//		skillCoolDowns[index].value = timeRemaining;
+	//	}
+	//}
 
 	public void ReduceHealthBar(int amount) {
 		playerHealthBar.value = amount;
