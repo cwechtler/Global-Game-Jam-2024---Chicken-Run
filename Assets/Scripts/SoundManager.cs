@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour {
 			ChangeMasterVolume(PlayerPrefsManager.GetMasterVolume());
 		}
 		else {
-			ChangeMasterVolume(0f);
+			ChangeMasterVolume(-10f);
 		}
 
 		if (PlayerPrefs.HasKey("music_volume")) {

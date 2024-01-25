@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private Transform skillSpawner, skillSpawnPoint, activeSkillContainer;
 	[SerializeField] private GameObject lightningEndPoint;
 	[Space]
-	[SerializeField] private Transform notch;
+	[SerializeField] private Transform chicken;
 	[SerializeField] private GameObject rigFront, rigBack;
 	[Space]
 	[SerializeField] private CanvasController canvasController;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 	private List<GameObject> inventoryItems = new List<GameObject>();
 
 	private Rigidbody2D myRigidbody2D;
-	private Animator[] animators;
+	public Animator[] animators;
 
 	private bool moveHorizontaly, moveVertically;
 	private bool isDead = false;
@@ -236,16 +236,24 @@ public class PlayerController : MonoBehaviour
 
 	private void SetAnimations()
 	{
-		if (moveHorizontaly || moveVertically) {
-			foreach (var animator in animators) {
+		if (moveHorizontaly || moveVertically)
+		{
+			foreach (var animator in animators)
+			{
 				if (animator.isActiveAndEnabled)
+				{
 					animator.SetBool("Move", true);
+				}
 			}
 		}
-		else {
-			foreach (var animator in animators) {
+		else
+		{
+			foreach (var animator in animators)
+			{
 				if (animator.isActiveAndEnabled)
+				{
 					animator.SetBool("Move", false);
+				}
 			}
 		}
 	}
@@ -253,21 +261,17 @@ public class PlayerController : MonoBehaviour
 	private void FlipDirection()
 	{
 		if (moveHorizontaly ) {
-			rigFront.SetActive(true);
-			rigBack.SetActive(false);
 			float DirectionX = Mathf.Sign(myRigidbody2D.velocity.x);
-
 			if (DirectionX == 1) {
-				notch.localScale = new Vector2(1f, 1f);
+				chicken.localScale = new Vector2(.1f, .1f);
 			}
 			if (DirectionX == -1) {
-				notch.localScale = new Vector2(-1f, 1f);
+				chicken.localScale = new Vector2(-.1f, .1f);
 			}
 		}
 
 		if (moveVertically) {
 			float DirectionY = Mathf.Sign(myRigidbody2D.velocity.y);
-
 			if (DirectionY == 1) {
 				rigFront.SetActive(false);
 				rigBack.SetActive(true);
