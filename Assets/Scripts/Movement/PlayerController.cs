@@ -263,10 +263,10 @@ public class PlayerController : MonoBehaviour
 		if (moveHorizontaly ) {
 			float DirectionX = Mathf.Sign(myRigidbody2D.velocity.x);
 			if (DirectionX == 1) {
-				chicken.localScale = new Vector2(.1f, .1f);
+				chicken.localScale = new Vector2(.2f, .2f);
 			}
 			if (DirectionX == -1) {
-				chicken.localScale = new Vector2(-.1f, .1f);
+				chicken.localScale = new Vector2(-.2f, .2f);
 			}
 		}
 

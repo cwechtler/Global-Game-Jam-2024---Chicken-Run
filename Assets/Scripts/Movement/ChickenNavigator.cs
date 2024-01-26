@@ -8,7 +8,8 @@ public class ChickenNavigator : MonoBehaviour
 	[SerializeField] private Vector2 speed = new Vector2(10, 10);
 	[Space]
 	[SerializeField] private GameObject prefabToSpawn;
-	[SerializeField] private AudioClip layClip;
+	[SerializeField] private AudioClip layClip, cluckClip;
+	[SerializeField] private AnimationClip layEggAnim;
 	[Space]
 	[SerializeField] private Transform chicken;
 	[SerializeField] private GameObject rigFront, rigBack;
@@ -60,7 +61,14 @@ public class ChickenNavigator : MonoBehaviour
 
 	IEnumerator dropEgg()
 	{
-		yield return new WaitForSeconds(1);
+		foreach (var animator in animators)
+		{
+			if (animator.isActiveAndEnabled)
+			{
+				animator.SetTrigger("LayEgg");
+			}
+		}
+		yield return new WaitForSeconds(layEggAnim.length);
 
 		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);
@@ -68,6 +76,7 @@ public class ChickenNavigator : MonoBehaviour
 
 		yield return new WaitForSeconds(layClip.length);
 
+		audioSource.PlayOneShot(cluckClip);
 		randomNode = grid.nodes[Random.Range(0, grid.nodes.Length)];
 		destination1 = (Vector3)randomNode.position;
 		ai.destination = destination1;
@@ -101,27 +110,22 @@ public class ChickenNavigator : MonoBehaviour
 
 	private void FlipDirection()
 	{
-		Debug.Log(moveHorizontaly);
-		Debug.Log(moveVertically);
 		if (moveHorizontaly)
 		{
-			//var flipX = (aipath.desiredVelocity.x > 0.0f);
 			float DirectionX = Mathf.Sign(aipath.desiredVelocity.x);
-			Debug.Log(DirectionX);
 			if (DirectionX == 1)
 			{
-				chicken.localScale = new Vector2(.1f, .1f);
+				chicken.localScale = new Vector2(.2f, .2f);
 			}
 			if (DirectionX == -1)
 			{
-				chicken.localScale = new Vector2(-.1f, .1f);
+				chicken.localScale = new Vector2(-.2f, .2f);
 			}
 		}
 
 		if (moveVertically)
 		{
 			float DirectionY = Mathf.Sign(aipath.desiredVelocity.y);
-			Debug.Log(DirectionY);
 			if (DirectionY == 1)
 			{
 				rigFront.SetActive(false);
