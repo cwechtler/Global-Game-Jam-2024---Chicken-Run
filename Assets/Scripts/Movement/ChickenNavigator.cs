@@ -8,6 +8,7 @@ public class ChickenNavigator : MonoBehaviour
 	[SerializeField] private Vector2 speed = new Vector2(10, 10);
 	[Space]
 	[SerializeField] private GameObject prefabToSpawn;
+	[SerializeField] private Transform eggLocation;
 	[SerializeField] private AudioClip layClip, cluckClip;
 	[SerializeField] private AnimationClip layEggAnim;
 	[Space]
@@ -68,9 +69,9 @@ public class ChickenNavigator : MonoBehaviour
 				animator.SetTrigger("LayEgg");
 			}
 		}
-		yield return new WaitForSeconds(layEggAnim.length);
+		//yield return new WaitForSeconds(layEggAnim.length);
 
-		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
+		GameObject enemy = Instantiate(prefabToSpawn, eggLocation.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);
 		audioSource.PlayOneShot(layClip);
 

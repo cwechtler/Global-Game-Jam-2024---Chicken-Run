@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1973848764058794728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5562792857174517906}
+  m_Layer: 14
+  m_Name: EggLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5562792857174517906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973848764058794728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.51, y: -0.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6963885197743751981}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6963885197743751957
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +66,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2900332009305443932}
+  - {fileID: 5562792857174517906}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,7 +360,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
   prefabToSpawn: {fileID: 2091083611941321407, guid: 03660ac158a70ef4a941d0c0a3fa2cb6, type: 3}
+  eggLocation: {fileID: 5562792857174517906}
   layClip: {fileID: 8300000, guid: 8e3876165ce847c42bbccc8b5ed73323, type: 3}
+  cluckClip: {fileID: 8300000, guid: d027ebd34f7e11f4aab66f087913e796, type: 3}
+  layEggAnim: {fileID: 7400000, guid: 5db9c403fc9e50f44951eb67e17eb4e7, type: 2}
   chicken: {fileID: 2900332009305443932}
   rigFront: {fileID: 2900332009600258504}
   rigBack: {fileID: 2900332010512807256}
@@ -341,6 +375,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6963885197743751981}
     m_Modifications:
+    - target: {fileID: 4065310355170916008, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065310356384879160, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4065310356648103340, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
       propertyPath: m_RootOrder
       value: 0
