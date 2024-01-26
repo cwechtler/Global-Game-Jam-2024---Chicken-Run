@@ -131,11 +131,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 542
+        y: 540
         width: 490
         height: 385
       alignment: 9
-      pivot: {x: 0.7791619, y: 0.3223514}
+      pivot: {x: 0.7820088, y: 0.36482218}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,11 +152,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 763
-        y: 558
+        y: 556
         width: 245
         height: 460
       alignment: 9
-      pivot: {x: 0.12533507, y: 0.4960871}
+      pivot: {x: 0.1410794, y: 0.56632227}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,11 +173,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 37
-        y: 25
+        y: 23
         width: 490
         height: 384
       alignment: 9
-      pivot: {x: 0.21349163, y: 0.32657602}
+      pivot: {x: 0.16305427, y: 0.34577635}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: Chick_baby_3
       rect:
         serializedVersion: 2
-        x: 776
-        y: 7
+        x: 774
+        y: 5
         width: 244
         height: 461
       alignment: 9
-      pivot: {x: 0.9057057, y: 0.5}
+      pivot: {x: 0.904521, y: 0.55449975}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
