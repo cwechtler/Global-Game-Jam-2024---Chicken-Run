@@ -10,7 +10,6 @@ public class ChickenNavigator : MonoBehaviour
 	[SerializeField] private GameObject prefabToSpawn;
 	[SerializeField] private Transform eggLocation;
 	[SerializeField] private AudioClip layClip, cluckClip;
-	[SerializeField] private AnimationClip layEggAnim;
 	[Space]
 	[SerializeField] private Transform chicken;
 	[SerializeField] private GameObject rigFront, rigBack;
@@ -39,6 +38,7 @@ public class ChickenNavigator : MonoBehaviour
 		randomNode = grid.nodes[Random.Range(0, grid.nodes.Length)];
 		destination1 = (Vector3)randomNode.position;
 
+		aipath.maxSpeed = speed.x;
 		ai.destination = destination1;
 		ai.SearchPath();
 		reroute = true;
@@ -69,7 +69,6 @@ public class ChickenNavigator : MonoBehaviour
 				animator.SetTrigger("LayEgg");
 			}
 		}
-		//yield return new WaitForSeconds(layEggAnim.length);
 
 		GameObject enemy = Instantiate(prefabToSpawn, eggLocation.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);

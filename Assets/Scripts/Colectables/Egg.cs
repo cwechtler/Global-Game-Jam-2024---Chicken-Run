@@ -23,23 +23,21 @@ public class Egg : MonoBehaviour
 		if (collision.CompareTag("Player") && canHatch) {
 			canHatch = false;
 			StartCoroutine(hatch());
-			//GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
-			//enemy.transform.SetParent(parent.transform);
-			//audioSource.PlayOneShot(hatchClip);
-			//GameController.instance.EggsHatched++;
-			//GameController.instance.ChicksFollowing++;
-			//Destroy(this.gameObject);
 		}
 		if (collision.CompareTag("Enemy"))
 		{
-			audioSource.PlayOneShot(breakClip);
+			StopCoroutine(hatch());
+			audioSource.Stop();
+			audioSource.clip = breakClip;
+			audioSource.Play();
 			GameController.instance.EggsBroken++;
 			Destroy(this.gameObject);
 		}
 	}
 
 	IEnumerator hatch() {
-		audioSource.PlayOneShot(hatchClip);
+		audioSource.clip = hatchClip;
+		audioSource.Play();
 		yield return new WaitForSeconds(hatchClip.length);
 		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);

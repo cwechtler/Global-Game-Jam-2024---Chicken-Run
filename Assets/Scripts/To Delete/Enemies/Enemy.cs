@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 
 	private void DamagePlayer() {
 		damageTimer = 1;
-		player.GetComponent<PlayerController>().ReduceHealth(damage);
+		//player.GetComponent<PlayerController>().ReduceHealth(damage);
 	}
 
 	private void OnCollisionStay2D(Collision2D collision)

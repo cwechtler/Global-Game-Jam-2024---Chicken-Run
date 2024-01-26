@@ -7,14 +7,20 @@ public class BabyChick : MonoBehaviour
 {
 	[SerializeField] private float minSpeed = 3f;
 	[SerializeField] private float maxSpeed = 6f;
-	[SerializeField] private AudioClip caughtClip;
+	[Space]
+	[SerializeField] private Transform chicken;
+	[SerializeField] private GameObject rigFront, rigBack;
 
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
+	public Animator[] animators;
+
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		animators = GetComponentsInChildren<Animator>(true);
+
 		aipath = GetComponent<AIPath>();
 		destinationSetter = GetComponent<AIDestinationSetter>();
 		destinationSetter.target = player.transform;
@@ -23,14 +29,8 @@ public class BabyChick : MonoBehaviour
 
 	void Update()
 	{
-		if (destinationSetter.target != player.transform)
-		{
-			FlipDirectionReversed();
-		}
-		else
-		{
-			FlipDirection();
-		}
+		SetAnimations();
+		FlipDirection();
 
 		if (destinationSetter.target == null)
 		{
@@ -44,33 +44,62 @@ public class BabyChick : MonoBehaviour
 		if (collision.CompareTag("Enemy"))
 		{
 			Debug.Log("Enemy");
-			SoundManager.instance.BabyChickCaughtSound(caughtClip, transform.position);
+			SoundManager.instance.BabyChickCaughtSound();
 			GameController.instance.ChicksCaught++;
 			GameController.instance.ChicksFollowing--;
 			Destroy(gameObject);
 		}
 	}
 
-	private void FlipDirection()
+	private void SetAnimations()
 	{
-		if (aipath.desiredVelocity.x >= 0.01f)
+		bool isMovingX = aipath.desiredVelocity.x == 0f;
+		bool isMovingY = aipath.desiredVelocity.y == 0f;
+		if (!isMovingX || !isMovingY)
 		{
-			transform.localScale = new Vector3(1f, 1f, 0);
+			foreach (var animator in animators)
+			{
+				if (animator.isActiveAndEnabled)
+				{
+					animator.SetBool("Move", true);
+				}
+			}
 		}
-		else if (aipath.desiredVelocity.x <= -0.01f)
+		else
 		{
-			transform.localScale = new Vector3(-1f, 1f, 0);
+			foreach (var animator in animators)
+			{
+				if (animator.isActiveAndEnabled)
+				{
+					animator.SetBool("Move", false);
+				}
+			}
 		}
 	}
-	private void FlipDirectionReversed()
+
+	private void FlipDirection()
 	{
-		if (aipath.desiredVelocity.x >= 0.01f)
+		float DirectionX = Mathf.Sign(aipath.desiredVelocity.x);
+		float DirectionY = Mathf.Sign(aipath.desiredVelocity.y);
+		if (DirectionX == 1)
 		{
-			transform.localScale = new Vector3(-1f, 1f, 0);
+			chicken.localScale = new Vector2(.1f, .1f);
 		}
-		else if (aipath.desiredVelocity.x <= -0.01f)
+		if (DirectionX == -1)
 		{
-			transform.localScale = new Vector3(1f, 1f, 0);
+			chicken.localScale = new Vector2(-.1f, .1f);
+		}
+
+
+		if (DirectionY == 1)
+		{
+			rigFront.SetActive(false);
+			rigBack.SetActive(true);
+		}
+		if (DirectionY == -1)
+		{
+			rigFront.SetActive(true);
+			rigBack.SetActive(false);
 		}
 	}
 }
