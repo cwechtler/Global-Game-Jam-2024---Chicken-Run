@@ -121,10 +121,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 10
+  MinDistance: 0
+  MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -210,5 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 2866670388757562656, guid: aaa362d67bddc5a45b56e588ad99962a, type: 3}
+  audioPrefabToSpawn: {fileID: 7260209138254274841, guid: 53e20038264cd5046bffbba351f1bacf, type: 3}
   hatchClip: {fileID: 8300000, guid: 8a978767b7798d445997af6e33ab304f, type: 3}
-  breakClip: {fileID: 0}
+  breakClip: {fileID: 8300000, guid: 430c36a195094734cbac0c0c0080b210, type: 3}

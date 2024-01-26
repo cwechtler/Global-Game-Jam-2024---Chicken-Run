@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabToSpawn;
+    [SerializeField] private GameObject prefabToSpawn, audioPrefabToSpawn;
 	[SerializeField] private AudioClip hatchClip;
-	[SerializeField] private AudioClip breakClip;
     
 	private GameObject parent;
 	private AudioSource audioSource;
@@ -28,8 +27,7 @@ public class Egg : MonoBehaviour
 		{
 			StopCoroutine(hatch());
 			audioSource.Stop();
-			audioSource.clip = breakClip;
-			audioSource.Play();
+			GameObject audioObject = Instantiate(audioPrefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 			GameController.instance.EggsBroken++;
 			Destroy(this.gameObject);
 		}
