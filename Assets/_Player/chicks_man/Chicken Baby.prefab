@@ -522,7 +522,7 @@ Transform:
   m_GameObject: {fileID: 4065310355170916008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4065310355263560921}
   - {fileID: 4065310354548870244}
@@ -1936,7 +1936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4065310356648103340}
   m_Layer: 0
-  m_Name: Chicken White
+  m_Name: Chicken Baby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
