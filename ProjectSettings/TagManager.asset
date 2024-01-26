@@ -53,6 +53,9 @@ TagManager:
   - name: Forground
     uniqueID: 2295191679
     locked: 0
+  - name: NPC
+    uniqueID: 2223317689
+    locked: 0
   - name: Player
     uniqueID: 2323965313
     locked: 0
