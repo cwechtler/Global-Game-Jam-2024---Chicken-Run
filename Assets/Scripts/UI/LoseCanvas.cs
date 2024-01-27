@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class LoseCanvas : MonoBehaviour
 {
-	[SerializeField] private TextMeshProUGUI shadowText, airText, fireText, waterText, total, placeholder;
-	[SerializeField] private GameObject saveScore, mainMenuButton;
-	[SerializeField] private TMP_InputField PlayerName;
+	[SerializeField] private TextMeshProUGUI eggText, eggCrushedText, chicksHatchedText, chicksCaughtText, total; //placeholder;
+	[SerializeField] private GameObject mainMenuButton; //saveScore, 
+	//[SerializeField] private TMP_InputField PlayerName;
 
 	private Animator animator;
 	private bool selected;
@@ -18,11 +18,11 @@ public class LoseCanvas : MonoBehaviour
 	{
 		animator = gameObject.GetComponent<Animator>();
 		//PlayerName.text = GameController.instance.PlayerName;
-		//shadowText.text = GameController.instance.Shadow.ToString();
-		//airText.text = GameController.instance.Air.ToString();
-		//fireText.text = GameController.instance.Fire.ToString();
-		//waterText.text = GameController.instance.Water.ToString();
-		total.text = GameController.instance.EggsBroken.ToString();
+		eggText.text = GameController.instance.EggsLayed.ToString();
+		eggCrushedText.text = GameController.instance.EggsBroken.ToString();
+		chicksHatchedText.text = GameController.instance.ChicksHatched.ToString();
+		chicksCaughtText.text = GameController.instance.ChicksCaught.ToString();
+		total.text = GameController.instance.Score.ToString();
 
 		//if(GameController.instance.PlayerName == System.Environment.MachineName) {
 		//	EventSystem.current.SetSelectedGameObject(PlayerName.gameObject);
@@ -31,7 +31,8 @@ public class LoseCanvas : MonoBehaviour
 
 	private void Update()
 	{
-		if (saveScore.GetComponent<Button>().interactable == false && !selected) {
+		//if (saveScore.GetComponent<Button>().interactable == false && !selected) {
+		if (!selected) {
 			selected = true;
 			EventSystem.current.SetSelectedGameObject(mainMenuButton);
 		}

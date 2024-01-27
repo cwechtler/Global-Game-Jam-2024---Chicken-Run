@@ -14,7 +14,8 @@ public class SoundManager : MonoBehaviour {
 	[SerializeField] private AudioClip[] ambientClips;
 	[SerializeField] private AudioClip[] movementClips;
 	[Space]
-	[SerializeField] private AudioClip hurtClip;
+	[SerializeField] private AudioClip chickDepositSound;
+	[SerializeField] private AudioClip chickCaughtClip;
 	[SerializeField] private AudioClip deathClip;
 	[SerializeField] private AudioClip buttonClick;
 
@@ -136,15 +137,25 @@ public class SoundManager : MonoBehaviour {
 		SFXAudioSource.PlayOneShot(movementClips[1], .2f);
 	}
 
+	public void ChickDepositSound() {
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(chickDepositSound, .2f);
+	}
+
+	public void BabyChickCaughtSound() {
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(chickCaughtClip, .2f);
+	}
+
 	public void PlayRunClip()
 	{
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(movementClips[2], .2f);
 	}
 
-	public void PlayHurtClip() {
+	public void PlayCaughtClip() {
 		SFXAudioSource.pitch = Random.Range(.95f, 1.05f);
-		SFXAudioSource.PlayOneShot(hurtClip);
+		SFXAudioSource.PlayOneShot(chickCaughtClip);
 	}
 
 	public void PlayDeathClip()
@@ -156,13 +167,6 @@ public class SoundManager : MonoBehaviour {
 	public void PlayDestructibleSound(AudioClip clip)
 	{
 		SFXAudioSource.PlayOneShot(clip);
-	}
-
-	public void BabyChickCaughtSound(AudioClip clip, Vector3 point)
-	{
-		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(clip);
-		AudioSource.PlayClipAtPoint(clip, point);
 	}
 
 	public void ChangeMasterVolume(float volume) {

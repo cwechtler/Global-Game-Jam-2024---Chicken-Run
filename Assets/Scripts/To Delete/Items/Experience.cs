@@ -13,7 +13,7 @@ public class Experience : MonoBehaviour
 		if (collision.gameObject.CompareTag("Player") && !collected)
 		{
 			collected = true;
-			collision.GetComponent<PlayerController>().ExperiencePoints += ExperiencePointsWorth;
+			//collision.GetComponent<PlayerController>().ExperiencePoints += ExperiencePointsWorth;
 			Destroy(transform.gameObject);
 		}
 	}

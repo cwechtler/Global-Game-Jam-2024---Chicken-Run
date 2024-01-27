@@ -42,7 +42,7 @@ public class CanvasController : MonoBehaviour
 	private void Update()
 	{
 		ScoreText.text = GameController.instance.Score.ToString();
-		EggsHatchedText.text = GameController.instance.EggsHatched.ToString();
+		EggsHatchedText.text = GameController.instance.ChicksHatched.ToString();
 		EggsBrokenText.text = GameController.instance.EggsBroken.ToString();
 		ChicksCaughtText.text = GameController.instance.ChicksCaught.ToString();
 		ChicksFollowingText.text = GameController.instance.ChicksFollowing.ToString();

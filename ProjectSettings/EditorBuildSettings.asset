@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: be09a98da7c8af3418f5d10dc3e85c13
   - enabled: 1
-    path: Assets/Scenes/New Folder/Leaderboard.unity
+    path: Assets/Scenes/To Delete/Leaderboard.unity
     guid: 6c07eb12d514a6e4a99bd8e75797da96
   - enabled: 1
-    path: Assets/Scenes/New Folder/Level 1.unity
+    path: Assets/Scenes/To Delete/Level 1 old.unity
     guid: ad0b0d7752551f54c958683c50fcd227
   - enabled: 1
     path: Assets/Scenes/Lose Level.unity

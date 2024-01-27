@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabToSpawn;
+    [SerializeField] private GameObject prefabToSpawn, audioPrefabToSpawn;
 	[SerializeField] private AudioClip hatchClip;
-	[SerializeField] private AudioClip breakClip;
     
 	private GameObject parent;
 	private AudioSource audioSource;
@@ -23,27 +22,24 @@ public class Egg : MonoBehaviour
 		if (collision.CompareTag("Player") && canHatch) {
 			canHatch = false;
 			StartCoroutine(hatch());
-			//GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
-			//enemy.transform.SetParent(parent.transform);
-			//audioSource.PlayOneShot(hatchClip);
-			//GameController.instance.EggsHatched++;
-			//GameController.instance.ChicksFollowing++;
-			//Destroy(this.gameObject);
 		}
 		if (collision.CompareTag("Enemy"))
 		{
-			audioSource.PlayOneShot(breakClip);
+			StopCoroutine(hatch());
+			audioSource.Stop();
+			GameObject audioObject = Instantiate(audioPrefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 			GameController.instance.EggsBroken++;
 			Destroy(this.gameObject);
 		}
 	}
 
 	IEnumerator hatch() {
-		audioSource.PlayOneShot(hatchClip);
+		audioSource.clip = hatchClip;
+		audioSource.Play();
 		yield return new WaitForSeconds(hatchClip.length);
 		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);
-		GameController.instance.EggsHatched++;
+		GameController.instance.ChicksHatched++;
 		GameController.instance.ChicksFollowing++;
 		Destroy(this.gameObject);
 	}

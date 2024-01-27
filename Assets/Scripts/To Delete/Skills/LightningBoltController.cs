@@ -15,7 +15,7 @@ public class LightningBoltController : MonoBehaviour
 	{
 		capsule = GetComponent<CapsuleCollider2D>();
 		lightningBoltScript = GetComponent<LightningBoltScript>();
-		lightningEndPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().LightningEndPoint;
+		//lightningEndPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().LightningEndPoint;
 		lightningBoltScript.EndObject = lightningEndPoint;
 		childBolt.EndObject = lightningBoltScript.EndObject;
 	}
