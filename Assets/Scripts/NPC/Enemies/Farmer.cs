@@ -1,13 +1,16 @@
 using Pathfinding;
+using System.Collections;
 using UnityEngine;
 
 public class Farmer : MonoBehaviour
 {
-	[SerializeField] private float speed = 9f;
+	[SerializeField] private float speed = 5f;
 
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
+
+	private bool speedIncreased = true;
 
 	void Start()
 	{
@@ -32,8 +35,13 @@ public class Farmer : MonoBehaviour
 		if (destinationSetter.target == null)
 		{
 			destinationSetter.target = player.transform;
-			aipath.maxSpeed = speed;
+			//aipath.maxSpeed = speed;
 			gameObject.layer = 9;
+		}
+
+		if (speedIncreased) {
+			StartCoroutine(IncreaseSpeed());
+			speedIncreased = false;
 		}
 	}
 
@@ -66,5 +74,12 @@ public class Farmer : MonoBehaviour
 		{
 			transform.localScale = new Vector3(1f, 1f, 0);
 		}
+	}
+
+	private IEnumerator IncreaseSpeed() {
+		yield return new WaitForSeconds(15f);
+		speed = speed + .5f;
+		aipath.maxSpeed = speed;
+		speedIncreased	= true;
 	}
 }
