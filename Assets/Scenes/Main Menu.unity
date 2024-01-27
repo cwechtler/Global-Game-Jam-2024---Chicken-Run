@@ -331,8 +331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.150003, y: 33}
-  m_SizeDelta: {x: -50.29999, y: 70.17}
+  m_AnchoredPosition: {x: -0.000015258789, y: 33}
+  m_SizeDelta: {x: 0, y: 70.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291852222
 MonoBehaviour:
@@ -356,8 +356,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
-  m_sharedMaterial: {fileID: 7157183441429833066, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
+  m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_fontSizeMin: 0
   m_fontSizeMax: 0
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 25.940979}
+  m_margin: {x: -0.80474854, y: 0, z: 0, w: 68.983086}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -585,11 +585,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Chicken Run
 
-    <size=50%><color=#FCD314>Created by: Craig Wechtler &
-    Mike Thompson'
+    <size=50%><color=#FCD314>Created by: Craig Wechtler,
+    Mike Thompson & Patrick Santerre'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
-  m_sharedMaterial: {fileID: 7157183441429833066, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
+  m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1079,8 +1079,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lets Run
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
-  m_sharedMaterial: {fileID: 7157183441429833066, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
+  m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 25.940979}
+  m_margin: {x: 0, y: 0, z: 0, w: 68.83358}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1213,8 +1213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
-  m_sharedMaterial: {fileID: 7157183441429833066, guid: e36c8d6d8dc0ddf418387c2d59518aca, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
+  m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 25.940979}
+  m_margin: {x: 0, y: 0, z: 0, w: 68.92368}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1670,7 +1670,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 95, y: -430}
-  m_SizeDelta: {x: 413.06, y: 67}
+  m_SizeDelta: {x: 460.4, y: 67}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1533623415
 MonoBehaviour:

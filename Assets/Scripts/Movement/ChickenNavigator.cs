@@ -70,8 +70,9 @@ public class ChickenNavigator : MonoBehaviour
 			}
 		}
 
-		GameObject enemy = Instantiate(prefabToSpawn, eggLocation.position, Quaternion.identity) as GameObject;
-		enemy.transform.SetParent(parent.transform);
+		GameObject egg = Instantiate(prefabToSpawn, eggLocation.position, Quaternion.identity) as GameObject;
+		egg.transform.SetParent(parent.transform);
+		GameController.instance.EggsLayed++;
 		audioSource.PlayOneShot(layClip);
 
 		yield return new WaitForSeconds(layClip.length);

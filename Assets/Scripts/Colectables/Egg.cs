@@ -39,7 +39,7 @@ public class Egg : MonoBehaviour
 		yield return new WaitForSeconds(hatchClip.length);
 		GameObject enemy = Instantiate(prefabToSpawn, transform.position, Quaternion.identity) as GameObject;
 		enemy.transform.SetParent(parent.transform);
-		GameController.instance.EggsHatched++;
+		GameController.instance.ChicksHatched++;
 		GameController.instance.ChicksFollowing++;
 		Destroy(this.gameObject);
 	}
