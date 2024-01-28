@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour
 		audioSource.clip = playerCaughtClip;
 		audioSource.Play();
 		canvasController.ActivateCaughtHud(true);
+		SoundManager.instance.PlayGotcha();
 		foreach (var animator in animators)
 		{
 			animator.SetBool("Caught", true);

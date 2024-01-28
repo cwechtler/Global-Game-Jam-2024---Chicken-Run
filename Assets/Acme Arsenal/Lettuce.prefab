@@ -113,3 +113,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechBubble: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 1e5509499869dc54ca1a6b073de60a35, type: 3}

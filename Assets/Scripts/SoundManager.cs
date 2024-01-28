@@ -19,6 +19,9 @@ public class SoundManager : MonoBehaviour {
 	[SerializeField] private AudioClip chickCaughtClip;
 	[SerializeField] private AudioClip buttonClick;
 	[Space]
+	[SerializeField] private AudioClip gotchaClip;
+	[SerializeField] private AudioClip grumbleClip;
+	[SerializeField] private AudioClip owClip;
 	[SerializeField] private AudioClip smackClip;
 	[SerializeField] private AudioClip slipClip;
 
@@ -145,6 +148,10 @@ public class SoundManager : MonoBehaviour {
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(slipClip, 1f);
 	}
+	public void PlayOneShotClip(AudioClip clip) {
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(clip, 1f);
+	}
 
 	public void PlayWalkClip() {
 		SFXAudioSource.pitch = 1f;
@@ -170,6 +177,22 @@ public class SoundManager : MonoBehaviour {
 	public void PlayRooster() {
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(roosterClip, 8f);
+	}
+
+	public void PlayGotcha()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(gotchaClip, 8f);
+	}
+	public void PlayGrumble()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(grumbleClip, 8f);
+	}
+	public void PlayOw()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(owClip, 8f);
 	}
 
 	//public void PlayCaughtClip() {

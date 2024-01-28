@@ -71,13 +71,15 @@ public class BabyChick : MonoBehaviour
 				}
 			}
 			destinationSetter.target = this.transform;
-			speechBubble.GetComponent<SpeechBubleFollow>().ActivateBubble();
 			StartCoroutine(DestroyGO());
 		}
 	}
 
 	IEnumerator DestroyGO()
 	{
+		yield return new WaitForSeconds(1);
+		speechBubble.GetComponent<SpeechBubleFollow>().ActivateBubble();
+		SoundManager.instance.PlayGrumble();
 		yield return new WaitForSeconds(10);
 		//foreach (SpriteRenderer renderer in renderers) {
 		//	Color color = renderer.material.color;
