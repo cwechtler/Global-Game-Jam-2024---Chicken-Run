@@ -11,8 +11,9 @@ public class LevelManager : MonoBehaviour {
 	public const string OptionsString = "Options";
 	public const string Level1String = "Level 1";
 	public const string LoseLevelString = "Lose Level";
+	public const string WinLevelString = "Win Level";
 
-	#if UNITY_WEBGL
+#if UNITY_WEBGL
 	[Tooltip("For browser session storage. Uncheck to set URL manually")]
 	[SerializeField] private bool setSessionStorageGameQuitURL = false;
 	
@@ -105,6 +106,9 @@ public class LevelManager : MonoBehaviour {
 				clipIndex = 0;
 				break;
 			case LoseLevelString:
+				clipIndex = 1;
+				break;
+			case WinLevelString:
 				clipIndex = 1;
 				break;
 			case Level1String:	

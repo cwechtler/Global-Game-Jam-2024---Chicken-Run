@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(eatWormAnimClip.length);
 		if (loadNextLevel) {
 			Debug.Log("Move to next Level");
-			LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+			LevelManager.instance.LoadLevel(LevelManager.WinLevelString);
 		}
 	}
 
