@@ -234,7 +234,7 @@ MonoBehaviour:
   eggText: {fileID: 1598206633}
   eggCrushedText: {fileID: 1138326494}
   chicksHatchedText: {fileID: 327230400}
-  chicksStompedText: {fileID: 0}
+  chicksStompedText: {fileID: 1993359516}
   total: {fileID: 478244726}
   mainMenuButton: {fileID: 549511260}
 --- !u!114 &226045937
