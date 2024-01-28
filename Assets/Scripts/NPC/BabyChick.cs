@@ -58,7 +58,7 @@ public class BabyChick : MonoBehaviour
 			Debug.Log("Col: Enemy");
 			isDead = true;
 			SoundManager.instance.BabyChickCaughtSound();
-			GameController.instance.ChicksCrushed++;
+			GameController.instance.ChicksStomped++;
 			GameController.instance.ChicksFollowing--;
 			myRigidbody2D.isKinematic = true;
 			myCollider2D.enabled = false;

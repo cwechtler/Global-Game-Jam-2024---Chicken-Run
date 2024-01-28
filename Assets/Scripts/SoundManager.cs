@@ -138,7 +138,7 @@ public class SoundManager : MonoBehaviour {
 
 	public void PlayRakeClip() {
 		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(smakClip, .5f);
+		SFXAudioSource.PlayOneShot(smakClip, 1f);
 	}
 
 	public void PlayWalkClip() {
