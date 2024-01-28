@@ -13,6 +13,7 @@ TagManager:
   - Chick Container
   - Egg Container
   - Baby Chick
+  - Worm
   layers:
   - Default
   - TransparentFX

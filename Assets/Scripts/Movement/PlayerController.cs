@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
 	[Space]
 	[SerializeField] private Transform chicken;
 	[SerializeField] private GameObject rigFront, rigBack;
+	[SerializeField] private AnimationClip eatWormAnimClip;
 	[Space]
 	[SerializeField] private CanvasController canvasController;
 	[Space]
 	[SerializeField] private AudioClip playerCaughtClip;
+	[SerializeField] private AudioClip eatWormClip;
 	[SerializeField] private AudioClip deathClip;
 
 	public float FireX { get => fireX; }
@@ -156,6 +158,40 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 	}
 
+	IEnumerator EatWorm() {
+		foreach (var animator in animators)
+		{
+			animator.SetBool("EatWorm", true);
+		}
+		audioSource.Stop();
+		audioSource.clip = null;
+		audioSource.loop = false;
+		audioSource.PlayOneShot(eatWormClip);
+
+		yield return new WaitForSeconds(eatWormAnimClip.length);
+		Debug.Log("Move to next Level");
+		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+	}
+
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Worm"))
+		{
+			StartCoroutine(EatWorm());
+			//EatWorm();
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Worm"))
+		{
+			StopCoroutine(EatWorm());
+			Debug.Log("Stop Eating");
+			//EatWorm();
+		}
+	}
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Enemy"))
@@ -219,6 +255,13 @@ public class PlayerController : MonoBehaviour
 			}
 			if (DirectionY == -1) {
 				rigFront.SetActive(true);
+				foreach (var animator in animators)
+				{
+					if (animator.isActiveAndEnabled)
+					{
+						animator.Play("normalState", 0, 0f);
+					}
+				}	
 				rigBack.SetActive(false);
 			}
 		}

@@ -46,7 +46,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 9079760658400217882, guid: d8648b42f809a6048ac85b0947055905, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.084
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -348,10 +348,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 55e4612ddb128d94cbdfd68b6538960c, type: 3}
   - {fileID: 8300000, guid: 1db20c63697fde94d95428459e6f2f25, type: 3}
   ambientClips:
-  - {fileID: 8300000, guid: 50df625c9878f2741b43dbbdf39ad8f1, type: 3}
+  - {fileID: 8300000, guid: 6474a25fa7014a44aba85d42ee389f64, type: 3}
   movementClips: []
+  roosterClip: {fileID: 8300000, guid: d95b351d30084a241b03fc7b7742f5bb, type: 3}
   chickDepositSound: {fileID: 8300000, guid: 3df5cadcddb8ab34e8c94f5c4c4c504f, type: 3}
   chickCaughtClip: {fileID: 8300000, guid: 33d7a7b84071ea04095ff1e5ba2c44e6, type: 3}
-  playerCaughtClip: {fileID: 8300000, guid: 33d7a7b84071ea04095ff1e5ba2c44e6, type: 3}
-  deathClip: {fileID: 8300000, guid: bef2388a433b9144dbd0ce41865bf95d, type: 3}
-  buttonClick: {fileID: 8300000, guid: 65fdffbddac7d224986b45620065f7b6, type: 3}
+  buttonClick: {fileID: 8300000, guid: 3df5cadcddb8ab34e8c94f5c4c4c504f, type: 3}
