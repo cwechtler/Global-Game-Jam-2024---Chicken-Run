@@ -92,8 +92,15 @@ public class Farmer : MonoBehaviour
 
 		if (DirectionY == 1)
 		{
-			rigFront.SetActive(false);
-			rigBack.SetActive(true);
+			if (destinationSetter.target == this.transform)
+			{
+				rigFront.SetActive(true);
+				rigBack.SetActive(false);
+			}
+			else {
+				rigFront.SetActive(false);
+				rigBack.SetActive(true);
+			}
 		}
 		if (DirectionY == -1)
 		{
