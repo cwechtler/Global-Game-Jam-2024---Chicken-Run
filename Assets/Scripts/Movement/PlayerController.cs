@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 	private bool hasChance = false;
 	private bool loadNextLevel = true;
 	private Coroutine eat;
+	private Animator[] enemyAnimators;
 
 
 	private float fireX, fireY;
@@ -115,6 +116,16 @@ public class PlayerController : MonoBehaviour
 			foreach (var animator in animators)
 			{
 				animator.SetBool("Caught", false);
+			}
+			if (enemyAnimators != null)
+			{
+				foreach (var enemyAnimator in enemyAnimators)
+				{
+					if (enemyAnimator.isActiveAndEnabled)
+					{
+						enemyAnimator.SetBool("Catch", false);
+					}
+				}
 			}
 
 			yield return new WaitForSeconds(2f);
@@ -205,6 +216,14 @@ public class PlayerController : MonoBehaviour
 	{
 		if (collision.CompareTag("Enemy"))
 		{
+			enemyAnimators = collision.GetComponentsInChildren<Animator>(true);
+			foreach (var enemyAnimator in enemyAnimators)
+			{
+				if (enemyAnimator.isActiveAndEnabled)
+				{
+					enemyAnimator.SetBool("Catch", true);
+				}
+			}
 			StartCoroutine(PlayerCaught());
 		}
 	}

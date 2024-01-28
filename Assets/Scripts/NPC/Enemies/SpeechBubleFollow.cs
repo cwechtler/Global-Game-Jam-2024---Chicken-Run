@@ -5,6 +5,7 @@ public class SpeechBubleFollow : MonoBehaviour
 {
     [SerializeField] private float displayDuration; 
     [SerializeField] private GameObject speechBubblePositionGO;
+	[SerializeField] private GameObject speechBubbleGO2;
 
 	private void Awake()
 	{
@@ -15,9 +16,14 @@ public class SpeechBubleFollow : MonoBehaviour
         this.transform.position = speechBubblePositionGO.transform.position;
     }
 
+	public void ActivateBubble() {
+		speechBubbleGO2.SetActive(true);
+		StartCoroutine(DisableGO());
+	}
+
 	IEnumerator DisableGO()
 	{
 		yield return new WaitForSeconds(displayDuration);
-		gameObject.SetActive(false);
+		speechBubbleGO2.SetActive(false);
 	}
 }
