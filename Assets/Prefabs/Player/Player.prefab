@@ -214,7 +214,7 @@ MonoBehaviour:
   eatWormAnimClip: {fileID: 7400000, guid: 153b645a2b3144a4996b3c2fe1b0246c, type: 2}
   canvasController: {fileID: 0}
   playerCaughtClip: {fileID: 8300000, guid: 33d7a7b84071ea04095ff1e5ba2c44e6, type: 3}
-  eatWormClip: {fileID: 8300000, guid: 64f1c711f1eebb649b1d3ab09c96579c, type: 3}
+  eatWormClip: {fileID: 8300000, guid: 17be3bf731099ec479a38097d105a558, type: 3}
   deathClip: {fileID: 8300000, guid: bef2388a433b9144dbd0ce41865bf95d, type: 3}
 --- !u!1001 &650597056370570821
 PrefabInstance:

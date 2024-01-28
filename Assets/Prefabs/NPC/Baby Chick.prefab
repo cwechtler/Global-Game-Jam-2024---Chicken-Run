@@ -293,11 +293,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpeed: 3
   maxSpeed: 6
-  caughtClip: {fileID: 0}
   chicken: {fileID: 544586385353521474}
   rigFront: {fileID: 544586385666942678}
   rigBack: {fileID: 544586386831131206}
-  animators: []
 --- !u!114 &1919418599752436520
 MonoBehaviour:
   m_ObjectHideFlags: 0

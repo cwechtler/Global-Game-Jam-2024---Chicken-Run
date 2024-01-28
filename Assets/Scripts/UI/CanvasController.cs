@@ -1,42 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class CanvasController : MonoBehaviour
 {
 	[SerializeField] private GameObject pausePanel;
-	//[SerializeField] private GameObject inventory;
-	[Space]
-	[SerializeField] private Color32 defaultTextColor = new Color32(0, 138, 255, 255);
-	[SerializeField] private Color32 activeTextColor = new Color32(255, 0, 0, 255);
 	[Space]
 	[SerializeField] private Slider playerCaughtBar;
 
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI EggsHatchedText;
 	[SerializeField] private TextMeshProUGUI EggsBrokenText;
-	[SerializeField] private TextMeshProUGUI ChicksCaughtText;
+	[SerializeField] private TextMeshProUGUI ChicksStompedText;
 	[SerializeField] private TextMeshProUGUI ChicksFollowingText;
 
-	//[SerializeField] private TextMeshProUGUI[] skillTexts;
-	//[SerializeField] private Slider[] skillCoolDowns;
-	//[SerializeField] private Image[] skillCooldownFill;
-
-	private Button button;
-	private TextMeshProUGUI buttonText;
 	private Animator animator;
 
 	private void Start()
 	{
-		playerCaughtBar.value = 10;
-		//UpdateTextColor();
-		//foreach (Transform child in inventory.transform) {
-		//	if (child.name == "Key") {
-		//		print("Has Key");
-		//	}
-		//}
-		
+		playerCaughtBar.value = 10;	
 	}
 
 	private void Update()
@@ -44,7 +26,7 @@ public class CanvasController : MonoBehaviour
 		ScoreText.text = GameController.instance.Score.ToString();
 		EggsHatchedText.text = GameController.instance.ChicksHatched.ToString();
 		EggsBrokenText.text = GameController.instance.EggsBroken.ToString();
-		ChicksCaughtText.text = GameController.instance.ChicksCaught.ToString();
+		ChicksStompedText.text = GameController.instance.ChicksCrushed.ToString();
 		ChicksFollowingText.text = GameController.instance.ChicksFollowing.ToString();
 
 		if (GameController.instance.isPaused) {
@@ -54,48 +36,6 @@ public class CanvasController : MonoBehaviour
 			pausePanel.SetActive(false);
 		}
 	}
-
-	//public void AddInventoryItem(GameObject inventoryPrefab) {
-	//	Instantiate(inventoryPrefab, inventory.transform);
-	//}
-
-	//public void RemoveInventoryItem(string itemKey)
-	//{
-	//	foreach (Transform child in inventory.transform) {
-	//		if (child.name == itemKey) {
-	//			GameObject.Destroy(child.gameObject);
-	//		}
-	//	}
-	//}
-
-	//public void UpdateTextColor()
-	//{		
-	//	for (int i = 0; i < skillTexts.Length; i++) {
-	//		if (i == GameController.instance.ActiveSkillIndex) {
-	//			skillTexts[i].color = activeTextColor;
-	//			skillCooldownFill[i].color = activeTextColor;
-	//		}
-	//		else {
-	//			skillTexts[i].color = defaultTextColor;
-	//			skillCooldownFill[i].color = Color.white;
-	//		}
-	//	}
-	//}
-
-	//public void SetSkillImages(int index, Sprite sprite) {
-	//	skillTexts[index].GetComponentInParent<Image>().sprite = sprite;
-	//}
-
-	//public void SetCoolDownTime(int index, float coolDownTime) {
-	//	skillCoolDowns[index].maxValue = coolDownTime;
-	//	skillCoolDowns[index].value = coolDownTime;
-	//}
-
-	//public void CoolDownTimer(float timeRemaining, float skillCoolDown, int index) {
-	//	if (timeRemaining < skillCoolDown) {
-	//		skillCoolDowns[index].value = timeRemaining;
-	//	}
-	//}
 
 	public void ReduceCaughthBar(int amount) {
 		playerCaughtBar.value = amount;

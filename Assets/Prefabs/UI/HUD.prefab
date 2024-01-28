@@ -2715,17 +2715,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 864371655}
-  defaultTextColor:
-    serializedVersion: 2
-    rgba: 4294937088
-  activeTextColor:
-    serializedVersion: 2
-    rgba: 4278190335
   playerCaughtBar: {fileID: 9160323745153369392}
   ScoreText: {fileID: 9160323744985149306}
   EggsHatchedText: {fileID: 7311281306584726385}
   EggsBrokenText: {fileID: 7311281307001745715}
-  ChicksCaughtText: {fileID: 7311281306744128271}
+  ChicksStompedText: {fileID: 7311281306744128271}
   ChicksFollowingText: {fileID: 6051386306639303268}
 --- !u!1 &9160323744720503391
 GameObject:
@@ -3099,7 +3093,7 @@ GameObject:
   - component: {fileID: 9160323745030880950}
   - component: {fileID: 9160323745030880951}
   m_Layer: 5
-  m_Name: Caught Image
+  m_Name: Stomped Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

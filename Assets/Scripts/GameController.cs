@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 	public int EggsLayed { get; set; } = 0;
 	public int EggsBroken { get; set; } = 0;
 	public int ChicksHatched { get; set; } = 0;
-	public int ChicksCaught { get; set; } = 0;
+	public int ChicksCrushed { get; set; } = 0;
 	public int ChicksFollowing { get; set; } = 0;
 
 	private GameObject fadePanel;
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
 
 	public void resetGame() {
 		EggsBroken = 0;
-		ChicksCaught = 0;
+		ChicksCrushed = 0;
 	}
 
 	public void FadePanel()

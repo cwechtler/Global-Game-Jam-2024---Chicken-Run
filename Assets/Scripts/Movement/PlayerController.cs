@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 	private bool isCaught = false;
 	private float timer;
 	private bool hasChance = false;
+	private bool loadNextLevel = true;
+	private Coroutine eat;
+
 
 	private float fireX, fireY;
 
@@ -167,16 +170,18 @@ public class PlayerController : MonoBehaviour
 		audioSource.PlayOneShot(eatWormClip);
 
 		yield return new WaitForSeconds(eatWormAnimClip.length);
-		Debug.Log("Move to next Level");
-		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+		if (loadNextLevel) {
+			Debug.Log("Move to next Level");
+			LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+		}
 	}
 
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Worm"))
 		{
-			StartCoroutine(EatWorm());
-			//EatWorm();
+			loadNextLevel = true;
+			eat = StartCoroutine(EatWorm());
 		}
 	}
 
@@ -184,9 +189,15 @@ public class PlayerController : MonoBehaviour
 	{
 		if (collision.CompareTag("Worm"))
 		{
-			StopCoroutine(EatWorm());
+			foreach (var animator in animators)
+			{
+				animator.SetBool("EatWorm", false);
+			}
+
+			loadNextLevel = false;
+			StopCoroutine(eat);
 			Debug.Log("Stop Eating");
-			//EatWorm();
+
 		}
 	}
 
