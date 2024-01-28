@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour {
 
 	public const string MainMenuString = "Main Menu";
 	public const string OptionsString = "Options";
-	public const string Level1String = "Level 1 new";
+	public const string Level1String = "Level 1";
 	public const string LoseLevelString = "Lose Level";
 
 	#if UNITY_WEBGL

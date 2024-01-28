@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a4c7c3d471ad44f84b13176b91a5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayDuration: 0
   speechBubblePositionGO: {fileID: 1521278877}
 --- !u!1001 &425120729
 PrefabInstance:
@@ -1250,7 +1251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1003102669
 Transform:
   m_ObjectHideFlags: 0
@@ -7307,7 +7308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4245730547099000277, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9160323744690344004, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_Name
