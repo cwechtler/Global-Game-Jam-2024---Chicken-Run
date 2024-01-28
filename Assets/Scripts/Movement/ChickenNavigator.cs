@@ -17,7 +17,7 @@ public class ChickenNavigator : MonoBehaviour
 	private GameObject parent;
 	private AudioSource audioSource;
 	private Rigidbody2D myRigidbody2D;
-	public Animator[] animators;
+	private Animator[] animators;
 	private AIPath aipath;
 	private IAstarAI ai;
 	private GridGraph grid;

@@ -1,57 +1,78 @@
-using System;
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.PostProcessing.HistogramMonitor;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] private int health = 100;
+	[SerializeField] private int caughtTimer = 10;
 	[SerializeField] private Vector2 speed = new Vector2(10, 10);
 	[Space]
 	[SerializeField] private Transform chicken;
 	[SerializeField] private GameObject rigFront, rigBack;
+	[SerializeField] private AnimationClip eatWormAnimClip;
 	[Space]
 	[SerializeField] private CanvasController canvasController;
+	[Space]
+	[SerializeField] private AudioClip playerCaughtClip;
+	[SerializeField] private AudioClip eatWormClip;
+	[SerializeField] private AudioClip deathClip;
 
 	public float FireX { get => fireX; }
 	public float FireY { get => fireY; }
 
 	private Rigidbody2D myRigidbody2D;
-	public Animator[] animators;
+	private Animator[] animators;
+	private AudioSource audioSource;
+	private GameObject farmer;
 
 	private bool moveHorizontaly, moveVertically;
 	private bool isDead = false;
+	private bool isCaught = false;
+	private float timer;
+	private bool hasChance = false;
 
 	private float fireX, fireY;
 
-
 	void Start()
 	{
+		farmer = GameObject.FindGameObjectWithTag("Enemy");
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		animators = GetComponentsInChildren<Animator>(true);
+		audioSource = GetComponent<AudioSource>();
+		timer = caughtTimer;
 	}
 
 	void Update()
 	{
-		if (!isDead) {
+		if (!isDead  && !isCaught) {
 			Move();
-			Fire();
+			// fire ability here
+		}
+
+		if (isCaught) {
+			CountDown();
+			if ((Input.GetButtonDown("Fire1") || Input.GetMouseButton(1)) && hasChance == false)
+			{
+				StartCoroutine(GetAway());
+			}
 		}
 	}
 
-	//public void ReduceHealth(int damage)
-	//{
-	//	if (!isDead) {
-	//		SoundManager.instance.PlayHurtClip();
+	public void CountDown()
+	{
+		if (!isDead)
+		{
+			timer -= Time.deltaTime;
+			canvasController.ReduceCaughthBar(Mathf.RoundToInt(timer));
 
-	//		health -= damage;
-	//		canvasController.ReduceHealthBar(health);
-
-	//		if (health <= 0) {
-	//			StartCoroutine(PlayerDeath());
-	//		}
-	//	}
-	//}
+			if (timer <= 0)
+			{
+				StartCoroutine(PlayerDeath());
+			}
+		}
+	}
 
 	private void Move()
 	{
@@ -73,28 +94,109 @@ public class PlayerController : MonoBehaviour
 		FlipDirection();
 	}
 
+	private IEnumerator GetAway()
+	{
+		hasChance = true;
+		int chance = Random.Range(0, 10);
+
+		Debug.Log(chance);
+
+		AIDestinationSetter destinationSetter = farmer.GetComponent<AIDestinationSetter>();
+		if (chance == 5)
+		{
+			audioSource.Stop();
+			isCaught = false;
+			myRigidbody2D.isKinematic = false;
+			myRigidbody2D.velocity = new Vector3(0, 0, 0);
+			timer = caughtTimer;
+			canvasController.ReduceCaughthBar(caughtTimer);
+			destinationSetter.target = farmer.transform;
+			foreach (var animator in animators)
+			{
+				animator.SetBool("Caught", false);
+			}
+
+			yield return new WaitForSeconds(2f);
+			destinationSetter.target = this.transform;
+		}
+
+		yield return new WaitForSeconds(.2f);
+		hasChance = false;
+	}
+
 	private IEnumerator PlayerDeath()
 	{
 		isDead = true;
 		myRigidbody2D.isKinematic = true;
 		myRigidbody2D.velocity = new Vector3(0, 0, 0);
+		audioSource.Stop();
+		audioSource.clip = deathClip;
+		audioSource.loop = false;
+		audioSource.Play();
+		
+		yield return new WaitForSeconds(deathClip.length - .7f);
+
 		foreach (var animator in animators) {
 			animator.SetBool("IsDead", true);
 		}
-		SoundManager.instance.PlayDeathClip();
 		yield return new WaitForSeconds(2f);
 		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
 	}
 
-	private void Fire() {
-		fireY = Input.GetAxis("SpellVertical");
-		fireX = Input.GetAxis("SpellHorizontal");
+	private IEnumerator PlayerCaught()
+	{
+		isCaught = true;
+		myRigidbody2D.isKinematic = true;
+		myRigidbody2D.velocity = new Vector3(0, 0, 0);
+		audioSource.clip = playerCaughtClip;
+		audioSource.Play();
+		foreach (var animator in animators)
+		{
+			animator.SetBool("Caught", true);
+		}
+		
+		yield return new WaitForSeconds(1f);
+	}
 
-		if (Input.GetMouseButton(1)) {
-			Vector3 direction = MousePointerDirection();
+	IEnumerator EatWorm() {
+		foreach (var animator in animators)
+		{
+			animator.SetBool("EatWorm", true);
+		}
+		audioSource.Stop();
+		audioSource.clip = null;
+		audioSource.loop = false;
+		audioSource.PlayOneShot(eatWormClip);
 
-			fireX = Mathf.Clamp(direction.x, -1, 1);
-			fireY = Mathf.Clamp(direction.y, -1, 1);
+		yield return new WaitForSeconds(eatWormAnimClip.length);
+		Debug.Log("Move to next Level");
+		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+	}
+
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Worm"))
+		{
+			StartCoroutine(EatWorm());
+			//EatWorm();
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Worm"))
+		{
+			StopCoroutine(EatWorm());
+			Debug.Log("Stop Eating");
+			//EatWorm();
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Enemy"))
+		{
+			StartCoroutine(PlayerCaught());
 		}
 	}
 
@@ -153,6 +255,13 @@ public class PlayerController : MonoBehaviour
 			}
 			if (DirectionY == -1) {
 				rigFront.SetActive(true);
+				//foreach (var animator in animators)
+				//{
+				//	if (animator.isActiveAndEnabled)
+				//	{
+				//		animator.Play("normalState", 0, 0f);
+				//	}
+				//}	
 				rigBack.SetActive(false);
 			}
 		}

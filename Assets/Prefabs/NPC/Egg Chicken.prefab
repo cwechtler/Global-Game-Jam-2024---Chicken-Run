@@ -311,11 +311,9 @@ MonoBehaviour:
   eggLocation: {fileID: 5562792857174517906}
   layClip: {fileID: 8300000, guid: c2cdf2967ee70a14c87c2585348cc583, type: 3}
   cluckClip: {fileID: 8300000, guid: d027ebd34f7e11f4aab66f087913e796, type: 3}
-  layEggAnim: {fileID: 7400000, guid: 5db9c403fc9e50f44951eb67e17eb4e7, type: 2}
   chicken: {fileID: 2900332009305443932}
   rigFront: {fileID: 2900332009600258504}
   rigBack: {fileID: 2900332010512807256}
-  animators: []
 --- !u!1001 &1165005835141809136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,9 +321,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6963885197743751981}
     m_Modifications:
+    - target: {fileID: 4065310354715488686, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4065310355170916008, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065310355449889381, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065310355449889383, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065310355559248714, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4065310356383500452, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4065310356384879160, guid: d25b0c07c8bd2f14da6a2f72576cc761, type: 3}
       propertyPath: m_IsActive

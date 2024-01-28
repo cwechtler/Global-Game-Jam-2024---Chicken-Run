@@ -14,7 +14,7 @@ public class BabyChick : MonoBehaviour
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
-	public Animator[] animators;
+	private Animator[] animators;
 
 	void Start()
 	{
@@ -36,6 +36,18 @@ public class BabyChick : MonoBehaviour
 		{
 			destinationSetter.target = player.transform;
 			gameObject.layer = 9;
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.collider.CompareTag("Enemy"))
+		{
+			Debug.Log("Col: Enemy");
+			SoundManager.instance.BabyChickCaughtSound();
+			GameController.instance.ChicksCaught++;
+			GameController.instance.ChicksFollowing--;
+			Destroy(gameObject);
 		}
 	}
 
