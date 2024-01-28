@@ -1,8 +1,6 @@
 using Pathfinding;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.PostProcessing.HistogramMonitor;
 
 public class PlayerController : MonoBehaviour
 {
