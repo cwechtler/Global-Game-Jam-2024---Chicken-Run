@@ -634,7 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a4c7c3d471ad44f84b13176b91a5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayDuration: 0
   speechBubblePositionGO: {fileID: 1521278877}
+  speechBubbleGO2: {fileID: 0}
 --- !u!1001 &425120729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6667,7 +6669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4245730547099000277, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9160323744690344004, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_Name

@@ -2,6 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class BabyChick : MonoBehaviour
 {
@@ -14,10 +15,13 @@ public class BabyChick : MonoBehaviour
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
-	private GameObject speechBubble;
+	public GameObject speechBubble;
 	private Animator[] animators;
 	private Rigidbody2D myRigidbody2D;
+	private Collider2D myCollider2D;
 	private bool isDead;
+	//private SpriteRenderer[];
+
 
 	void Start()
 	{
@@ -25,6 +29,7 @@ public class BabyChick : MonoBehaviour
 		speechBubble = GameObject.FindGameObjectWithTag("Speech Bubble");
 		animators = GetComponentsInChildren<Animator>(true);
 		myRigidbody2D = GetComponent<Rigidbody2D>();
+		myCollider2D = GetComponent<Collider2D>();
 
 		aipath = GetComponent<AIPath>();
 		destinationSetter = GetComponent<AIDestinationSetter>();
@@ -51,10 +56,12 @@ public class BabyChick : MonoBehaviour
 		if (collision.collider.CompareTag("Enemy"))
 		{
 			Debug.Log("Col: Enemy");
+			isDead = true;
 			SoundManager.instance.BabyChickCaughtSound();
 			GameController.instance.ChicksCrushed++;
 			GameController.instance.ChicksFollowing--;
 			myRigidbody2D.isKinematic = true;
+			myCollider2D.enabled = false;
 			myRigidbody2D.velocity = new Vector3(0, 0, 0);
 			foreach (var animator in animators)
 			{
@@ -64,33 +71,26 @@ public class BabyChick : MonoBehaviour
 				}
 			}
 			destinationSetter.target = this.transform;
-			speechBubble.SetActive(true);
-			//Destroy(gameObject);
+			speechBubble.GetComponent<SpeechBubleFollow>().ActivateBubble();
+			StartCoroutine(DestroyGO());
 		}
 	}
 
-	//Remove
-	//private void OnTriggerEnter2D(Collider2D collision)
-	//{
-	//	if (collision.CompareTag("Enemy"))
-	//	{
-	//		Debug.Log("Enemy");
-	//		SoundManager.instance.BabyChickCaughtSound();
-	//		GameController.instance.ChicksCrushed++;
-	//		GameController.instance.ChicksFollowing--;
-	//		foreach (var animator in animators)
-	//		{
-	//			if (animator.isActiveAndEnabled)
-	//			{
-	//				animator.SetBool("IsDead", true);
-	//			}
-	//		}
-	//		destinationSetter.target = this.transform;
-	//		speechBubble.SetActive(true);
-	//		//Destroy(gameObject);
-	//	}
-	//}
+	IEnumerator DestroyGO()
+	{
+		yield return new WaitForSeconds(10);
+		//foreach (SpriteRenderer renderer in renderers) {
+		//	Color color = renderer.material.color;
+		//	while (color.a > 0)
+		//	{
+		//		color.a -= 0.1f * Time.deltaTime;
+		//		renderer.material.color = color;
+		//		yield return null;
+		//	}
+		//}
 
+		Destroy(gameObject);
+	}
 
 	private void SetAnimations()
 	{
