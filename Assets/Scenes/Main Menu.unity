@@ -792,7 +792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reckon
+  m_text: Changes, I reckon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
   m_sharedMaterial: {fileID: -7358721159431827627, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mama wants Chk''n '
+  m_text: 'Mama wants chk''n '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
   m_sharedMaterial: {fileID: -7358721159431827627, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
