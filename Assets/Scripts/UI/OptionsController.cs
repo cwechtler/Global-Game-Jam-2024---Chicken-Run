@@ -8,15 +8,11 @@ public class OptionsController : MonoBehaviour {
 	//Difficulty level
 	//Key bindings
 
-
-	//[SerializeField] private float panelFadeTime;
 	[Space]
 	[SerializeField] private Slider masterVolumeSlider;
 	[SerializeField] private Slider musicVolumeSlider;
 	[SerializeField] private Slider sfxVolumeSlider;
 	[Space]
-	//[SerializeField] private GameObject canvasGroupPanel;
-	//[SerializeField] private GameObject fadePanel;
 	[SerializeField] private Slider startSliderInSelected;
 
 	private CanvasGroup canvasGroup;

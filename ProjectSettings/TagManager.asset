@@ -7,10 +7,14 @@ TagManager:
   - Enemy
   - Fade Panel
   - Obsticle
-  - DropContainer
   - Skill
   - Collectable
   - Destructible
+  - Chick Container
+  - Egg Container
+  - Baby Chick
+  - Worm
+  - Speech Bubble
   layers:
   - Default
   - TransparentFX
@@ -26,8 +30,8 @@ TagManager:
   - Suction
   - FireBall
   - Destructible
-  - 
-  - 
+  - Chicken
+  - Egg
   - 
   - 
   - 
@@ -51,8 +55,14 @@ TagManager:
   - name: Forground
     uniqueID: 2295191679
     locked: 0
+  - name: NPC
+    uniqueID: 2223317689
+    locked: 0
   - name: Player
     uniqueID: 2323965313
+    locked: 0
+  - name: Above Player
+    uniqueID: 1377218539
     locked: 0
   - name: Default
     uniqueID: 0

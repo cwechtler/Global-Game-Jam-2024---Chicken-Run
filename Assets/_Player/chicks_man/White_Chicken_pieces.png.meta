@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: c43c4a456550ebc44932bbee411ada11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8857658800697423499
+    second: White_Chicken_pieces_0
+  - first:
+      213: -6606333615000818825
+    second: White_Chicken_pieces_1
+  - first:
+      213: 3852842733193691803
+    second: White_Chicken_pieces_2
+  - first:
+      213: -9013588923197055268
+    second: White_Chicken_pieces_3
+  - first:
+      213: 9138431752929448755
+    second: White_Chicken_pieces_4
+  - first:
+      213: 334849087485793744
+    second: White_Chicken_pieces_5
+  - first:
+      213: 4653302760691731152
+    second: White_Chicken_pieces_6
+  - first:
+      213: 3832816627003546599
+    second: White_Chicken_pieces_7
+  - first:
+      213: -6872675997707019285
+    second: White_Chicken_pieces_8
+  - first:
+      213: -1926292288877358305
+    second: White_Chicken_pieces_9
+  - first:
+      213: -5083200679232098016
+    second: White_Chicken_pieces_10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: White_Chicken_pieces_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1271
+        width: 623
+        height: 757
+      alignment: 9
+      pivot: {x: 0.6958796, y: 0.32456997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86be25dfb9bcea70800000000000000
+      internalID: 8857658800697423499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_1
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1384
+        width: 703
+        height: 644
+      alignment: 9
+      pivot: {x: 0.5051058, y: 0.2714948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b672a34969154a0800000000000000
+      internalID: -6606333615000818825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_2
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 1869
+        width: 181
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9284777d0c087530800000000000000
+      internalID: 3852842733193691803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_3
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1563
+        width: 96
+        height: 103
+      alignment: 9
+      pivot: {x: 0.20089976, y: 0.7439261}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde917161ac49e280800000000000000
+      internalID: -9013588923197055268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1013
+        width: 78
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3339285034b32de70800000000000000
+      internalID: 9138431752929448755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1013
+        width: 79
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d554f0987f95a400800000000000000
+      internalID: 334849087485793744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_6
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 797
+        width: 644
+        height: 493
+      alignment: 9
+      pivot: {x: 0.8789845, y: 0.44175723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da0063e43ad39040800000000000000
+      internalID: 4653302760691731152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 816
+        width: 178
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebd1c54a66e03530800000000000000
+      internalID: 3832816627003546599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_8
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 838
+        width: 178
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebd154d7995f90a0800000000000000
+      internalID: -6872675997707019285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_9
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 71
+        width: 364
+        height: 799
+      alignment: 9
+      pivot: {x: 0.13516337, y: 0.58085823}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1314e38e5f6445e0800000000000000
+      internalID: -1926292288877358305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_Chicken_pieces_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1366
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021b8580ae7d479b0800000000000000
+      internalID: -5083200679232098016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

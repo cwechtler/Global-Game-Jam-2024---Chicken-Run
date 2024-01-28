@@ -107,8 +107,6 @@ public class LevelManager : MonoBehaviour {
 			case LoseLevelString:
 				clipIndex = 1;
 				break;
-			case "Test Level":
-			case "MikeTest":
 			case Level1String:	
 				clipIndex = randomIndex;
 				break;
