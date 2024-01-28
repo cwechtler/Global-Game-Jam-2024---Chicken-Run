@@ -314,7 +314,6 @@ MonoBehaviour:
   chicken: {fileID: 2900332009305443932}
   rigFront: {fileID: 2900332009600258504}
   rigBack: {fileID: 2900332010512807256}
-  animators: []
 --- !u!1001 &1165005835141809136
 PrefabInstance:
   m_ObjectHideFlags: 0

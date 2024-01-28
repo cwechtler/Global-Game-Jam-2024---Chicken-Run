@@ -5,7 +5,11 @@ using UnityEngine;
 public class Farmer : MonoBehaviour
 {
 	[SerializeField] private float speed = 5f;
+	[Space]
+	[SerializeField] private Transform farmer;
+	[SerializeField] private GameObject rigFront, rigBack;
 
+	private Animator[] animators;
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
@@ -15,6 +19,7 @@ public class Farmer : MonoBehaviour
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		animators = GetComponentsInChildren<Animator>(true);
 		aipath = GetComponent<AIPath>();
 		destinationSetter = GetComponent<AIDestinationSetter>();
 		destinationSetter.target = player.transform;
@@ -23,19 +28,12 @@ public class Farmer : MonoBehaviour
 
 	void Update()
 	{
-		if (destinationSetter.target != player.transform)
-		{
-			FlipDirectionReversed();
-		}
-		else
-		{
-			FlipDirection();
-		}
+		SetAnimations();
+		FlipDirection();
 
 		if (destinationSetter.target == null)
 		{
 			destinationSetter.target = player.transform;
-			//aipath.maxSpeed = speed;
 			gameObject.layer = 9;
 		}
 
@@ -53,26 +51,54 @@ public class Farmer : MonoBehaviour
 		}
 	}
 
-	private void FlipDirection()
+	private void SetAnimations()
 	{
-		if (aipath.desiredVelocity.x >= 0.01f)
+		bool isMovingX = aipath.desiredVelocity.x == 0f;
+		bool isMovingY = aipath.desiredVelocity.y == 0f;
+		if (!isMovingX || !isMovingY)
 		{
-			transform.localScale = new Vector3(0.5f, 0.5f, 0);
+			foreach (var animator in animators)
+			{
+				if (animator.isActiveAndEnabled)
+				{
+					animator.SetBool("Move", true);
+				}
+			}
 		}
-		else if (aipath.desiredVelocity.x <= -0.01f)
+		else
 		{
-			transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+			foreach (var animator in animators)
+			{
+				if (animator.isActiveAndEnabled)
+				{
+					animator.SetBool("Move", false);
+				}
+			}
 		}
 	}
-	private void FlipDirectionReversed()
+
+	private void FlipDirection()
 	{
-		if (aipath.desiredVelocity.x >= 0.01f)
+		float DirectionX = Mathf.Sign(aipath.desiredVelocity.x);
+		float DirectionY = Mathf.Sign(aipath.desiredVelocity.y);
+		if (DirectionX == 1)
 		{
-			transform.localScale = new Vector3(-0.5f, 0.5f, 0);
+			farmer.localScale = new Vector2(.5f, .5f);
 		}
-		else if (aipath.desiredVelocity.x <= -0.01f)
+		if (DirectionX == -1)
 		{
-			transform.localScale = new Vector3(0.5f, 0.5f, 0);
+			farmer.localScale = new Vector2(-.5f, .5f);
+		}
+
+		if (DirectionY == 1)
+		{
+			rigFront.SetActive(false);
+			rigBack.SetActive(true);
+		}
+		if (DirectionY == -1)
+		{
+			rigFront.SetActive(true);
+			rigBack.SetActive(false);
 		}
 	}
 

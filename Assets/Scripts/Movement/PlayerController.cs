@@ -255,13 +255,13 @@ public class PlayerController : MonoBehaviour
 			}
 			if (DirectionY == -1) {
 				rigFront.SetActive(true);
-				foreach (var animator in animators)
-				{
-					if (animator.isActiveAndEnabled)
-					{
-						animator.Play("normalState", 0, 0f);
-					}
-				}	
+				//foreach (var animator in animators)
+				//{
+				//	if (animator.isActiveAndEnabled)
+				//	{
+				//		animator.Play("normalState", 0, 0f);
+				//	}
+				//}	
 				rigBack.SetActive(false);
 			}
 		}

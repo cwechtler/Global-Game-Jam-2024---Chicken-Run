@@ -40,17 +40,6 @@ public class Worm : MonoBehaviour
 		}
 	}
 
-	//private void OnTriggerEnter2D(Collider2D collision)
-	//{
-	//	if (collision.CompareTag("Player"))
-	//	{
-	//		//SoundManager.instance.EnemyDeathSound(hatchClip);
-	//		//GameController.instance.endGame();
-	//		Debug.Log("End");
-	//		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
-	//	}
-	//}
-
 	IEnumerator moveWorm()
 	{
 		randomNode = grid.nodes[Random.Range(0, grid.nodes.Length)];

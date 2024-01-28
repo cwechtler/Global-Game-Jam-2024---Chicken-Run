@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EggChickenSpawner : MonoBehaviour
 {
-	[SerializeField] int numberOfChickensToSpawn;
+	[SerializeField] int numberOfChickensToSpawn = 3;
+	[SerializeField] float chickenSpawnInterval = 3f;
 	[SerializeField] GameObject eggChickenPrefab;
 
 	private Vector3 destination1;
@@ -23,7 +24,7 @@ public class EggChickenSpawner : MonoBehaviour
         {
 			GameObject eggChicken = Instantiate(eggChickenPrefab, destination1, Quaternion.identity) as GameObject;
 			eggChicken.transform.SetParent(this.transform);
-			yield return new WaitForSeconds(3f);
+			yield return new WaitForSeconds(chickenSpawnInterval);
 		}
 	}
 }

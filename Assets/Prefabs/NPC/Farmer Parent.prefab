@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitToSpawn: 5
-  farmerPrefab: {fileID: 7033831500583683862, guid: 9856292be674d3347a80255864c6ed98, type: 3}
+  farmerPrefab: {fileID: 7160920208386915867, guid: 4ebf56b3b4cb1b647a5e5c21e8ae86e7, type: 3}

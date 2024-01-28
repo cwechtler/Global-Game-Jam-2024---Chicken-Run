@@ -14,7 +14,7 @@ public class BabyChick : MonoBehaviour
 	private AIPath aipath;
 	private AIDestinationSetter destinationSetter;
 	private GameObject player;
-	public Animator[] animators;
+	private Animator[] animators;
 
 	void Start()
 	{
