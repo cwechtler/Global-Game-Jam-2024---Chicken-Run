@@ -6,6 +6,8 @@ using UnityEngine;
 public class EnemySlip : MonoBehaviour
 {
 	[SerializeField] GameObject speechBubble;
+	[SerializeField] AudioClip audioClip;
+
 	private GameObject player;
 	private bool canSlip = true;
 	AIDestinationSetter destinationSetter;
@@ -20,6 +22,10 @@ public class EnemySlip : MonoBehaviour
 	{
 		SoundManager.instance.PlaySlipClip();
 	}
+	private void PlayOneshot()
+	{
+		SoundManager.instance.PlayOneShotClip(audioClip);
+	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -32,6 +38,7 @@ public class EnemySlip : MonoBehaviour
 
 				destinationSetter.target = collision.transform;
 				speechBubble.SetActive(true);
+				PlayOneshot();
 				foreach (var enemyAnimator in enemyAnimators)
 				{
 					enemyAnimator.SetBool("Move", false);

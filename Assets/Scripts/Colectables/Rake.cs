@@ -6,6 +6,7 @@ using UnityEngine;
 public class Rake : MonoBehaviour
 {
 	[SerializeField] GameObject speechBubble;
+
 	private GameObject player;
     private Animator animator;
 
@@ -19,7 +20,7 @@ public class Rake : MonoBehaviour
         SoundManager.instance.PlayRakeClip();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
+	private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Enemy") && collision.isTrigger) {
             animator.SetTrigger("Flip");
 			StartCoroutine(Smack(collision.gameObject));
