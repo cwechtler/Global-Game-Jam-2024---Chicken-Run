@@ -351,4 +351,5 @@ MonoBehaviour:
   chickDepositSound: {fileID: 8300000, guid: 3df5cadcddb8ab34e8c94f5c4c4c504f, type: 3}
   chickCaughtClip: {fileID: 8300000, guid: 33d7a7b84071ea04095ff1e5ba2c44e6, type: 3}
   buttonClick: {fileID: 8300000, guid: 3df5cadcddb8ab34e8c94f5c4c4c504f, type: 3}
-  smakClip: {fileID: 0}
+  smackClip: {fileID: 8300000, guid: 15a1e8372f412db49b4f8aa61eeb24f3, type: 3}
+  slipClip: {fileID: 8300000, guid: 9f282260b034fee4bbb38fa0e078bedb, type: 3}
