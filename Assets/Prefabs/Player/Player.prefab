@@ -212,7 +212,8 @@ MonoBehaviour:
   rigFront: {fileID: 3561644345988244605}
   rigBack: {fileID: 3561644346900742381}
   canvasController: {fileID: 0}
-  animators: []
+  playerCaughtClip: {fileID: 8300000, guid: 33d7a7b84071ea04095ff1e5ba2c44e6, type: 3}
+  deathClip: {fileID: 8300000, guid: bef2388a433b9144dbd0ce41865bf95d, type: 3}
 --- !u!1001 &650597056370570821
 PrefabInstance:
   m_ObjectHideFlags: 0

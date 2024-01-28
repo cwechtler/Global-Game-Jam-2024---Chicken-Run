@@ -14,14 +14,16 @@ public class SoundManager : MonoBehaviour {
 	[SerializeField] private AudioClip[] ambientClips;
 	[SerializeField] private AudioClip[] movementClips;
 	[Space]
+	[SerializeField] private AudioClip roosterClip;
 	[SerializeField] private AudioClip chickDepositSound;
 	[SerializeField] private AudioClip chickCaughtClip;
 	//[SerializeField] private AudioClip playerCaughtClip;
 	//[SerializeField] private AudioClip deathClip;
 	[SerializeField] private AudioClip buttonClick;
 
+
 	public int MusicArrayLength { get => music.Length; }
-	//public float DeathClipLength { get => deathClip.length; }
+	public float roosterClipLength { get => roosterClip.length; }
 
 	private float audioVolume = 1f;
 	private int clipIndex = 0;
@@ -153,6 +155,11 @@ public class SoundManager : MonoBehaviour {
 	{
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(movementClips[2], .2f);
+	}
+
+	public void PlayRooster() {
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(roosterClip, 8f);
 	}
 
 	//public void PlayCaughtClip() {

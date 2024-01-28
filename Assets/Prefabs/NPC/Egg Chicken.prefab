@@ -311,7 +311,6 @@ MonoBehaviour:
   eggLocation: {fileID: 5562792857174517906}
   layClip: {fileID: 8300000, guid: c2cdf2967ee70a14c87c2585348cc583, type: 3}
   cluckClip: {fileID: 8300000, guid: d027ebd34f7e11f4aab66f087913e796, type: 3}
-  layEggAnim: {fileID: 7400000, guid: 5db9c403fc9e50f44951eb67e17eb4e7, type: 2}
   chicken: {fileID: 2900332009305443932}
   rigFront: {fileID: 2900332009600258504}
   rigBack: {fileID: 2900332010512807256}
