@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 92c9a94856fd94b498e5766b0c77da8d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2658678680662877083
+    second: Rake_0
+  - first:
+      213: -4419635868493962186
+    second: Rake_1
+  - first:
+      213: -1739683036236301777
+    second: Rake_2
+  - first:
+      213: 4363770262220855063
+    second: Rake_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +87,129 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rake_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 512
+        width: 497
+        height: 359
+      alignment: 9
+      pivot: {x: 0.23279567, y: 0.7399469}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c5f2383d97a1bd0800000000000000
+      internalID: -2658678680662877083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rake_1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 512
+        width: 497
+        height: 359
+      alignment: 9
+      pivot: {x: 0.75998265, y: 0.74994457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634a7d5089c4aa2c0800000000000000
+      internalID: -4419635868493962186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rake_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 194
+        width: 505
+        height: 314
+      alignment: 9
+      pivot: {x: 0.19793826, y: 0.21423534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2abc5bee776bd7e0800000000000000
+      internalID: -1739683036236301777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rake_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 194
+        width: 505
+        height: 314
+      alignment: 9
+      pivot: {x: 0.79495436, y: 0.22566593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7175619eee93f8c30800000000000000
+      internalID: 4363770262220855063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

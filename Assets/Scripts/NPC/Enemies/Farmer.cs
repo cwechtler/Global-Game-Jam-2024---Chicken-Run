@@ -57,22 +57,22 @@ public class Farmer : MonoBehaviour
 	{
 		if (aipath.desiredVelocity.x >= 0.01f)
 		{
-			transform.localScale = new Vector3(1f, 1f, 0);
+			transform.localScale = new Vector3(0.5f, 0.5f, 0);
 		}
 		else if (aipath.desiredVelocity.x <= -0.01f)
 		{
-			transform.localScale = new Vector3(-1f, 1f, 0);
+			transform.localScale = new Vector3(-0.5f, 0.5f, 0);
 		}
 	}
 	private void FlipDirectionReversed()
 	{
 		if (aipath.desiredVelocity.x >= 0.01f)
 		{
-			transform.localScale = new Vector3(-1f, 1f, 0);
+			transform.localScale = new Vector3(-0.5f, 0.5f, 0);
 		}
 		else if (aipath.desiredVelocity.x <= -0.01f)
 		{
-			transform.localScale = new Vector3(1f, 1f, 0);
+			transform.localScale = new Vector3(0.5f, 0.5f, 0);
 		}
 	}
 
