@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1562,6 +1562,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1244334200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8731262102866518083, guid: 4ebf56b3b4cb1b647a5e5c21e8ae86e7, type: 3}
+  m_PrefabInstance: {fileID: 7160920208086028084}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1270953466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6105,7 +6110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayDuration: 1
-  speechBubblePositionGO: {fileID: 0}
+  speechBubblePositionGO: {fileID: 1244334200}
   speechBubbleGO2: {fileID: 104447866}
 --- !u!4 &1760680819
 Transform:
