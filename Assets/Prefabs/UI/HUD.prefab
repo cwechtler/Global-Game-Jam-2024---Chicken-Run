@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skedaddle
+  m_text: Rubber-neck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skedaddle
+  m_text: Rubber-neck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}
   m_sharedMaterial: {fileID: -4167362210432230433, guid: 74038f6113cc96f4eb0e156cc2980783, type: 2}

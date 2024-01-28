@@ -234,7 +234,7 @@ MonoBehaviour:
   eggText: {fileID: 1598206633}
   eggCrushedText: {fileID: 1138326494}
   chicksHatchedText: {fileID: 327230400}
-  chicksCrushedText: {fileID: 1993359516}
+  chicksStompedText: {fileID: 0}
   total: {fileID: 478244726}
   mainMenuButton: {fileID: 549511260}
 --- !u!114 &226045937
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Created by: Craig Wechtler,  Mike Thompson & Patrick Santerre'
+  m_text: 'Created by: Craig Wechtler, Mike Thompson & Patrick Santerre'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 770940b94dfd1fa4998b9259b3805dd9, type: 2}
   m_sharedMaterial: {fileID: -2033489735126706931, guid: 770940b94dfd1fa4998b9259b3805dd9, type: 2}
@@ -6023,8 +6023,8 @@ MonoBehaviour:
   - {fileID: 2461304090702270925}
   - {fileID: 2461304089997990854}
   m_Bounds:
-    m_Center: {x: -0.0017400384, y: -0.000000059604645, z: 0}
-    m_Extent: {x: 0.13396001, y: 0.64, z: 0}
+    m_Center: {x: -0.0017405152, y: -0.000000059604645, z: 0.00000092294067}
+    m_Extent: {x: 0.13396001, y: 0.64, z: 1.1368684e-13}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!4 &2461304092093308756

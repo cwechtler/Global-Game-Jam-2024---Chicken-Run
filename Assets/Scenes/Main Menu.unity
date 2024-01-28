@@ -769,8 +769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291852222
 MonoBehaviour:
@@ -792,7 +792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: Reckon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
   m_sharedMaterial: {fileID: -7358721159431827627, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lets Run
+  m_text: 'Mama wants Chk''n '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
   m_sharedMaterial: {fileID: -7358721159431827627, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
@@ -2215,8 +2215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 4.9999847}
+  m_SizeDelta: {x: 0, y: -10.0000305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905454219
 MonoBehaviour:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Skedaddle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
   m_sharedMaterial: {fileID: -7358721159431827627, guid: ffc1f31cd979c1a439732410c4cd8737, type: 2}
