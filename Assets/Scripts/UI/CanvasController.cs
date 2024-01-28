@@ -6,8 +6,9 @@ public class CanvasController : MonoBehaviour
 {
 	[SerializeField] private GameObject pausePanel;
 	[Space]
+	[SerializeField] private GameObject caughtHud;
 	[SerializeField] private Slider playerCaughtBar;
-
+	[Space]
 	[SerializeField] private TextMeshProUGUI ScoreText;
 	[SerializeField] private TextMeshProUGUI EggsHatchedText;
 	[SerializeField] private TextMeshProUGUI EggsBrokenText;
@@ -26,7 +27,7 @@ public class CanvasController : MonoBehaviour
 		ScoreText.text = GameController.instance.Score.ToString();
 		EggsHatchedText.text = GameController.instance.ChicksHatched.ToString();
 		EggsBrokenText.text = GameController.instance.EggsBroken.ToString();
-		ChicksStompedText.text = GameController.instance.ChicksCrushed.ToString();
+		ChicksStompedText.text = GameController.instance.ChicksStomped.ToString();
 		ChicksFollowingText.text = GameController.instance.ChicksFollowing.ToString();
 
 		if (GameController.instance.isPaused) {
@@ -35,6 +36,9 @@ public class CanvasController : MonoBehaviour
 		else {
 			pausePanel.SetActive(false);
 		}
+	}
+	public void ActivateCaughtHud(bool isActive) { 
+		caughtHud.SetActive(isActive);
 	}
 
 	public void ReduceCaughthBar(int amount) {

@@ -17,9 +17,9 @@ public class SoundManager : MonoBehaviour {
 	[SerializeField] private AudioClip roosterClip;
 	[SerializeField] private AudioClip chickDepositSound;
 	[SerializeField] private AudioClip chickCaughtClip;
-	//[SerializeField] private AudioClip playerCaughtClip;
-	//[SerializeField] private AudioClip deathClip;
 	[SerializeField] private AudioClip buttonClick;
+	[Space]
+	[SerializeField] private AudioClip smakClip;
 
 
 	public int MusicArrayLength { get => music.Length; }
@@ -134,6 +134,11 @@ public class SoundManager : MonoBehaviour {
 	public void SetButtonClip(){
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(buttonClick, 2f);
+	}
+
+	public void PlayRakeClip() {
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(smakClip, 1f);
 	}
 
 	public void PlayWalkClip() {
