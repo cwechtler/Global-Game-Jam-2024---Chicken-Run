@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 	private bool loadNextLevel = true;
 	private Coroutine eat;
 	private Animator[] enemyAnimators;
+	private Vector3 myPosition;
 
 
 	private float fireX, fireY;
@@ -48,9 +49,14 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		if (!isDead  && !isCaught) {
+		if (!isDead && !isCaught)
+		{
 			Move();
 			// fire ability here
+		}
+
+		if(isDead) { 
+			transform.position = myPosition;
 		}
 
 		if (isCaught) {
@@ -101,8 +107,6 @@ public class PlayerController : MonoBehaviour
 		hasChance = true;
 		int chance = Random.Range(0, 10);
 
-		Debug.Log(chance);
-
 		AIDestinationSetter destinationSetter = farmer.GetComponent<AIDestinationSetter>();
 		if (chance == 5)
 		{
@@ -112,6 +116,7 @@ public class PlayerController : MonoBehaviour
 			myRigidbody2D.velocity = new Vector3(0, 0, 0);
 			timer = caughtTimer;
 			canvasController.ReduceCaughthBar(caughtTimer);
+			canvasController.ActivateCaughtHud(false);
 			destinationSetter.target = farmer.transform;
 			foreach (var animator in animators)
 			{
@@ -138,6 +143,7 @@ public class PlayerController : MonoBehaviour
 
 	private IEnumerator PlayerDeath()
 	{
+		myPosition = transform.position;
 		isDead = true;
 		myRigidbody2D.isKinematic = true;
 		myRigidbody2D.velocity = new Vector3(0, 0, 0);
@@ -162,6 +168,7 @@ public class PlayerController : MonoBehaviour
 		myRigidbody2D.velocity = new Vector3(0, 0, 0);
 		audioSource.clip = playerCaughtClip;
 		audioSource.Play();
+		canvasController.ActivateCaughtHud(true);
 		foreach (var animator in animators)
 		{
 			animator.SetBool("Caught", true);
