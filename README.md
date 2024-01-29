@@ -1,0 +1,1 @@
+This is a 2D isometric game built with C# & Unity3D during the Global Game Jam 2024
