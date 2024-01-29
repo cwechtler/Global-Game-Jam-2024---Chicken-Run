@@ -6297,6 +6297,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 862638174797899207, guid: 463dfbe8d3c30534f86f147ad81001a2, type: 3}
+      propertyPath: m_Size.x
+      value: 1.6886597
+      objectReference: {fileID: 0}
+    - target: {fileID: 862638174797899207, guid: 463dfbe8d3c30534f86f147ad81001a2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6886597
+      objectReference: {fileID: 0}
+    - target: {fileID: 862638174797899207, guid: 463dfbe8d3c30534f86f147ad81001a2, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.21179962
+      objectReference: {fileID: 0}
     - target: {fileID: 3561644346230701033, guid: 463dfbe8d3c30534f86f147ad81001a2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2
@@ -6434,6 +6446,10 @@ PrefabInstance:
     - target: {fileID: 9160323744690344004, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160323744690344004, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9160323744690344008, guid: 089e74b560024db4c955a449f4bef6fe, type: 3}
       propertyPath: m_Pivot.x
