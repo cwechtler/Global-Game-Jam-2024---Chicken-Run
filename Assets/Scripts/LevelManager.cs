@@ -96,7 +96,7 @@ public class LevelManager : MonoBehaviour {
 
 	private int ReferanceIndex(string scene)
 	{
-		int randomIndex = Random.Range(2, SoundManager.instance.MusicArrayLength);
+		int randomIndex = Random.Range(3, SoundManager.instance.MusicArrayLength);
 		int clipIndex;
 		switch (scene) {
 			case MainMenuString:
@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour {
 				clipIndex = 0;
 				break;
 			case LoseLevelString:
-				clipIndex = 1;
+				clipIndex = 2;
 				break;
 			case WinLevelString:
 				clipIndex = 1;

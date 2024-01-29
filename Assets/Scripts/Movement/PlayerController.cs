@@ -232,7 +232,9 @@ public class PlayerController : MonoBehaviour
 					enemyAnimator.SetBool("Catch", true);
 				}
 			}
-			StartCoroutine(PlayerCaught());
+			if (!isCaught) {
+				StartCoroutine(PlayerCaught());
+			}	
 		}
 	}
 
