@@ -182,17 +182,17 @@ public class SoundManager : MonoBehaviour {
 	public void PlayGotcha()
 	{
 		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(gotchaClip, 8f);
+		SFXAudioSource.PlayOneShot(gotchaClip, 1f);
 	}
 	public void PlayGrumble()
 	{
 		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(grumbleClip, 8f);
+		SFXAudioSource.PlayOneShot(grumbleClip, 1f);
 	}
 	public void PlayOw()
 	{
 		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(owClip, 8f);
+		SFXAudioSource.PlayOneShot(owClip, 1f);
 	}
 
 	//public void PlayCaughtClip() {

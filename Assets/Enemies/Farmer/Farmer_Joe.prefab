@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d31839e1e24434cb8074c64c529204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   farmer: {fileID: 7160920208386915840}
   rigFront: {fileID: 7160920209173026602}
   rigBack: {fileID: 7160920207591940360}

@@ -6653,6 +6653,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 7897895199257449949}
+    - target: {fileID: 7160920208386915852, guid: 4ebf56b3b4cb1b647a5e5c21e8ae86e7, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7160920208386915867, guid: 4ebf56b3b4cb1b647a5e5c21e8ae86e7, type: 3}
       propertyPath: m_Name
       value: Farmer_Joe
